@@ -1,2 +1,2 @@
 # IOTDB
-Database server for IOT projetc
+Database server for IOT project
