@@ -1,11 +1,7 @@
-/* jslint node: true */
-/* jslint esversion: 6 */
-/* jshint -W117 */
-
-var index = require('./index');
-var users = require('./users');
+const devicePost = require('./api/device/post.js');
+const deviceGet = require('./api/device/get.js');
 
 module.exports = function (app) {
-    app.use('/', index);
-    app.use('/users', users);
+    app.post('/v1/device', (req, res) => {devicePost(req, res)});
+    app.get('/v1/device/:device_id', (req, res) => {deviceGet(req, res)});
 };
