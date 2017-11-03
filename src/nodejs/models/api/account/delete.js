@@ -1,19 +1,19 @@
 const Log4n = require('../../../utils/log4n.js');
 const mongoClient = require('../../mongodbdelete.js');
 
-module.exports = function (device_id) {
-    const log4n = new Log4n('/models/api/device/delete');
-    // log4n.object(device_id,'device_id');
+module.exports = function (account_id) {
+    const log4n = new Log4n('/models/api/account/delete');
+    // log4n.object(account_id,'account_id');
 
     //traitement de suppression dans la base
     return new Promise(function (resolve, reject) {
         var query = {};
-        if(typeof device_id === 'undefined') {
+        if(typeof account_id === 'undefined') {
             reject({error:{code:400}});
-            log4n.debug('done - missing paramater (device_id)');
+            log4n.debug('done - missing paramater (account_id)');
         } else {
-            query.device_id = device_id;
-            mongoClient('device', query)
+            query.account_id = account_id;
+            mongoClient('account', query)
                 .then(datas => {
                     // log4n.object(datas, 'datas');
                     if (typeof datas === 'undefined') {

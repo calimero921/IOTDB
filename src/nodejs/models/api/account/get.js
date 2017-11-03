@@ -3,7 +3,7 @@ const mongoClient = require('../../mongodbfind.js');
 const read = require('./read.js');
 
 module.exports = function (query, offset, limit, overtake) {
-    const log4n = new Log4n('/models/api/device/get');
+    const log4n = new Log4n('/models/api/account/get');
     // log4n.object(query, 'query');
     // log4n.object(offset, 'offset');
     // log4n.object(limit, 'limit');
@@ -20,7 +20,7 @@ module.exports = function (query, offset, limit, overtake) {
         } else {
             if (typeof offset !== 'undefined') parameter.offset = offset;
             parameter.limit = limit;
-            mongoClient('device', query, parameter, overtake)
+            mongoClient('account', query, parameter, overtake)
                 .then(datas => {
                     var result = [];
                     if (datas.length > 0) {

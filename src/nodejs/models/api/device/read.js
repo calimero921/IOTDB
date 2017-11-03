@@ -2,7 +2,7 @@ const Log4n = require('../../../utils/log4n.js');
 
 module.exports = function (data) {
     const log4n = new Log4n('/models/api/device/read');
-    // log4n.object(data,'data');
+    // console.log('data:', data);
 
     var result = {};
     if (typeof data !== 'undefined') {

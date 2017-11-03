@@ -2,7 +2,7 @@ const uuid = require('uuid');
 const Log4n = require('../../../utils/log4n.js');
 
 module.exports = function () {
-    const log4n = new Log4n('/models/api/device/keygen');
+    const log4n = new Log4n('/models/api/account/keygen');
     var node = [];
 
     for(var i=0; i<6; i++) {

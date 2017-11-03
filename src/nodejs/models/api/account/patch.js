@@ -3,25 +3,26 @@ const mongoClient = require('../../mongodbupdate.js');
 const read = require('./read.js');
 const prepare = require('./prepare.js');
 
-module.exports = function (device_id, new_device) {
-    const log4n = new Log4n('/models/api/device/patch');
-    // log4n.object(device_id,'device_id');
-    // log4n.object(new_device,'new_device');
+module.exports = function (id, new_account) {
+    const log4n = new Log4n('/models/api/account/patch');
+    // log4n.object(id,'id');
+    // log4n.object(new_account,'new_account');
 
     //traitement de recherche dans la base
     return new Promise(function (resolve, reject) {
-        if (typeof device_id === 'undefined' || typeof new_device === 'undefined') {
+        if (typeof id === 'undefined' || typeof new_account === 'undefined') {
             reject({error: {code: 400}});
             log4n.debug('done - missing paramater')
         } else {
             var query = {};
-            query.device_id = device_id;
-            var parameter = prepare(new_device);
-            //au cas ou on usurperait le device
-            parameter.device_id = device_id;
-            mongoClient('device', query, parameter)
+            query.account_id = id;
+            var parameter = prepare(new_account);
+            //au cas ou on usurperait le account
+            parameter.account_id = id;
+            // console.log('parameter:', parameter);
+            mongoClient('account', query, parameter)
                 .then(datas => {
-                    // console.log('datas :', datas);
+                    console.log('datas :', datas);
                     if (typeof datas === 'undefined') {
                         reject({error: {code: 500}});
                         log4n.debug('done - no data')

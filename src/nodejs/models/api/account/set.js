@@ -5,19 +5,20 @@ const prepare = require('./prepare.js');
 const keygen = require('./keygen.js');
 const read = require('./read.js');
 
-module.exports = function (device) {
-    const log4n = new Log4n('/models/api/device/set');
-    // log4n.object(device, 'device');
+module.exports = function (account) {
+    const log4n = new Log4n('/models/api/account/set');
+    // log4n.object(account, 'account');
 
     //traitement d'enregistrement dans la base
     return new Promise(function (resolve, reject) {
-        if (typeof device === 'undefined') {
+        if (typeof account === 'undefined') {
             reject({error: {code: '400'}});
+            log4n.debug('done - missing parameter (account)');
         } else {
             var query = prepare(account);
-            query.device_id = keygen();
-            query.device_creation_date = parseInt(moment().format('x'));
-            mongoClient('device', query)
+            query.account_id = keygen();
+            query.account_creation_date = parseInt(moment().format('x'));
+            mongoClient('account', query)
                 .then(datas => {
                     // console.log('datas: ', datas);
                     if (typeof datas === 'undefined') {
