@@ -1,9 +1,9 @@
 {
   "name": "iotdb",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node app.js"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -12,10 +12,10 @@
     "ejs": "~2.5.7",
     "express": "~4.15.5",
     "morgan": "~1.9.0",
-    "serve-favicon": "~2.4.5",
-    "orientjs": "^2.2.7",
-    "mongodb": "^2.2.32",
-    "uuid": "^3.1.0",
-    "moment": "^2.19.1"
+    "serve-favicon": "^2.4.5",
+    "mongodb": "^3.0.1",
+    "uuid": "^3.2.1",
+    "moment": "^2.20.1",
+    "mqtt": "^2.15.1"
   }
 }

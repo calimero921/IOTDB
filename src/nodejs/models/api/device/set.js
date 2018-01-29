@@ -7,16 +7,21 @@ const read = require('./read.js');
 
 module.exports = function (device) {
     const log4n = new Log4n('/models/api/device/set');
-    // log4n.object(device, 'device');
+    log4n.object(device, 'device');
 
+    log4n.log('storing device');
     //traitement d'enregistrement dans la base
     return new Promise(function (resolve, reject) {
+        log4n.log('storing device');
         if (typeof device === 'undefined') {
+            log4n.log('error, no data');
             reject({error: {code: '400'}});
         } else {
+            log4n.log('preparing datas');
             var query = prepare(account);
             query.device_id = keygen();
             query.device_creation_date = parseInt(moment().format('x'));
+            log4n.object(query, 'query');
             mongoClient('device', query)
                 .then(datas => {
                     // console.log('datas: ', datas);

@@ -1,4 +1,6 @@
 module.exports = {
-    name: 'sessionmanager',
-    port: '3443'
+    name: 'IOTDB',
+    port: '3443',
+    swagger: '0.0.1',
+    date: '2018-01-29'
 };

@@ -1,6 +1,6 @@
 module.exports = {
-    logPath: '/opt/application/sessionmanager/log',
-    logFile: 'sessionmanager.log',
-    logFilepattern: 'sessionmanager.YYYY-MM-DD.log',
+    logPath: '/opt/application/iotdb/log',
+    logFile: 'iotdb.log',
+    logFilepattern: 'iotdb.YYYY-MM-DD.log',
     logLevel: 'debug'
 };
