@@ -4,19 +4,19 @@ module.exports = function (content, response, logger) {
     const log4n = new Log4n('/utils/responseError');
     // log4n.object(content, 'content');
 
-    if(typeof content.error === 'undefined') {
+    if(typeof content.error_code === 'undefined') {
         logger.error(content);
         response.status(500);
         response.send(content);
         log4n.debug('done');
     } else {
         var message = 'code: ';
-        message += content.error.code;
-        if(typeof content.error.message !== 'undefined') message += ' / message: ' + content.error.message;
+        message += content.error_code;
+        if(typeof content.error_message !== 'undefined') message += ' / message: ' + content.error.message;
         logger.error(message);
         response
-            .status(content.error.code)
-            .send(content.error.message);
+            .status(content.error_code)
+            .send(content.error_message);
         log4n.debug('done');
     }
 };

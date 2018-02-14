@@ -1,4 +1,5 @@
 const Log4n = require('../../../utils/log4n.js');
+const errorparsing = require('../../../utils/errorparsing.js');
 const mongoClient = require('../../mongodbfind.js');
 const read = require('./read.js');
 
@@ -15,7 +16,7 @@ module.exports = function (query, offset, limit, overtake) {
     return new Promise(function (resolve, reject) {
         var parameter = {};
         if (typeof limit === 'undefined') {
-            reject({error: {code: 400}});
+            reject(errorparsing({error_code: 400}));
             log4n.debug('done - missing parameter (limit)');
         } else {
             if (typeof offset !== 'undefined') parameter.offset = offset;
@@ -33,18 +34,18 @@ module.exports = function (query, offset, limit, overtake) {
                     } else {
                         if (overtake) {
                             // log4n.debug('no result but ok');
-                            resolve(result);
+                            resolve();
                             log4n.debug('done - no result but ok');
                         } else {
-                            reject({error: {code: 404}});
+                            reject(errorparsing({error_code: 404}));
                             log4n.debug('done - not found');
                         }
                     }
                 })
                 .catch(error => {
-                    if (typeof error === 'undefined') error = {error: {code: 500}};
+                    if (typeof error === 'undefined') error = {error_code: 500};
                     log4n.object(error, 'error');
-                    reject(error);
+                    reject(errorparsing(error));
                     log4n.debug('done - global catch')
                 });
         }

@@ -1,8 +1,8 @@
-const configMQTT = require('./config/mqtt.js');
-const Log4n = require('./utils/log4n.js');
+const configMQTT = require('../config/mqtt.js');
+const Log4n = require('../utils/log4n.js');
 const mqtt = require('mqtt');
-const checkJSON = require('./utils/checkJSON.js');
-const mqttroute = require('./routes/mqttroute.js')
+const checkJSON = require('../utils/checkJSON.js');
+const mqttroute = require('./mqttroute.js')
 
 const log4n = new Log4n('/MQTTEngine');
 let clientMQTT = {};
@@ -78,7 +78,9 @@ function onError(error) {
  */
 function onMessage(topic, message, packet) {
     log4n.debug('MQTT client message starting');
-    // console.log('topic: ' + topic + ' / message: ' + message.toString() + ' / packet: ', packet);
+    // log4n.object(topic, 'topic');
+    // log4n.object(message.toString(), 'message');
+    // log4n.object(packet, 'packet');
 
     let result = checkJSON(message);
     log4n.object(result, 'result');

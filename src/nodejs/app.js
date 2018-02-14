@@ -3,19 +3,24 @@
  */
 const fs = require('fs');
 const config = require('./config/server.js');
-const debug = require('debug')(config.name + ':server');
 const https = require('https');
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const MQTTEngine = require('./MQTTEngine.js');
-let app = express();
+const MQTTEngine = require('./routes/MQTTEngine.js');
+const Log4n = require('./utils/log4n.js');
+const connexion = require('./models/mongoconnexion.js');
 
-console.debug("Starting server ...");
+let app = express();
+const log4n = new Log4n('/app.js');
+
+log4n.debug("Starting server ...");
 app.set('trust proxy', 1);
 require('./routes/main') (app);
+
+global.globalConnection = null;
 
 // uncomment after placing your favicon in /public
 // view engine setup
@@ -56,7 +61,7 @@ mqtt.start();
 
 module.exports = app;
 
-console.debug("Server started, listening on port " + port);
+log4n.debug('Server started');
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -129,7 +134,7 @@ function onListening() {
     let bind = typeof addr === 'string'
         ? 'pipe ' + addr
         : 'port ' + addr.port;
-    debug('Listening on ' + bind);
+    log4n.debug('Listening on ' + bind);
 }
 
 /**

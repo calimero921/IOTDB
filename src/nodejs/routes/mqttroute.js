@@ -28,4 +28,5 @@ module.exports = function (topic, content) {
         default:
             break;
     }
+    log4n.debug('done');
 };

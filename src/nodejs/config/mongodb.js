@@ -1,7 +1,4 @@
 module.exports = {
-    host: 'localhost',
-    port: 27017,
-    username: 'root',
-    password: 'root',
-    name: 'iotdb'
+    url: 'mongodb://admin:password@localhost:27017/admin?connectTimeoutMS=30000',
+    dbName: 'iotdb'
 };

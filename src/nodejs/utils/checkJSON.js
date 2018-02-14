@@ -7,6 +7,7 @@ module.exports = function(object) {
 	try {
 		return JSON.parse(object);
 	} catch (e) {
+        log4n.object(e, 'exception');
         log4n.debug('done: raw datas');
         return querystring.parse(object);
 	}
