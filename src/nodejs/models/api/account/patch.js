@@ -1,4 +1,5 @@
 const Log4n = require('../../../utils/log4n.js');
+const errorparsing = require('../../../utils/errorparsing.js');
 const mongoClient = require('../../mongodbupdate.js');
 const read = require('./read.js');
 const prepare = require('./prepare.js');
@@ -11,12 +12,12 @@ module.exports = function (id, new_account) {
     //traitement de recherche dans la base
     return new Promise(function (resolve, reject) {
         if (typeof id === 'undefined' || typeof new_account === 'undefined') {
-            reject({error: {code: 400}});
+            reject(errorparsing({error_code: 400}));
             log4n.debug('done - missing paramater')
         } else {
-            var query = {};
+            let query = {};
             query.account_id = id;
-            var parameter = prepare(new_account);
+            let parameter = prepare(new_account);
             //au cas ou on usurperait le account
             parameter.account_id = id;
             // console.log('parameter:', parameter);
@@ -24,24 +25,23 @@ module.exports = function (id, new_account) {
                 .then(datas => {
                     console.log('datas :', datas);
                     if (typeof datas === 'undefined') {
-                        reject({error: {code: 500}});
+                        reject(errorparsing({error_code: 500}));
                         log4n.debug('done - no data')
                     } else {
-                        if (typeof datas.code === 'undefined') {
-                            var result = read(datas);
+                        if (typeof datas.error_code === 'undefined') {
+                            let result = read(datas);
                             // log4n.object(result, 'result');
                             resolve(result);
                             log4n.debug('done - ok');
                         } else {
-                            reject(datas);
+                            reject(errorparsing(datas));
                             log4n.debug('done - error')
                         }
                     }
                 })
                 .catch(error => {
-                    if (typeof error === 'undefined') error = {error: {code: 500}};
                     log4n.object(error, 'error');
-                    reject(error);
+                    reject(errorparsing(error));
                     log4n.debug('done - global catch')
                 });
         }

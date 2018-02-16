@@ -1,5 +1,6 @@
 const moment = require('moment');
 const Log4n = require('../../../utils/log4n.js');
+const errorparsing = require('../../../utils/errorparsing.js');
 const mongoClient = require('../../mongodbinsert.js');
 const prepare = require('./prepare.js');
 const keygen = require('./keygen.js');
@@ -12,7 +13,7 @@ module.exports = function (account) {
     //traitement d'enregistrement dans la base
     return new Promise(function (resolve, reject) {
         if (typeof account === 'undefined') {
-            reject({error: {code: '400'}});
+            reject(errorparsing({error_code: '400'}));
             log4n.debug('done - missing parameter (account)');
         } else {
             var query = prepare(account);
@@ -22,7 +23,7 @@ module.exports = function (account) {
                 .then(datas => {
                     // console.log('datas: ', datas);
                     if (typeof datas === 'undefined') {
-                        reject({error: {code: '500'}});
+                        reject(errorparsing({error_code: '500'}));
                         log4n.debug('done - no data');
                     } else {
                         var result = read(datas[0]);
@@ -32,9 +33,8 @@ module.exports = function (account) {
                     }
                 })
                 .catch(error => {
-                    if (typeof error === 'undefined') error = {error: {code: 500}};
                     log4n.object(error, 'error');
-                    reject(error);
+                    reject(errorparsing(error));
                     log4n.debug('done - global catch')
                 });
         }

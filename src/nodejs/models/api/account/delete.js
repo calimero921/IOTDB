@@ -1,4 +1,5 @@
 const Log4n = require('../../../utils/log4n.js');
+const errorparsing = require('../../../utils/errorparsing.js');
 const mongoClient = require('../../mongodbdelete.js');
 
 module.exports = function (account_id) {
@@ -7,9 +8,9 @@ module.exports = function (account_id) {
 
     //traitement de suppression dans la base
     return new Promise(function (resolve, reject) {
-        var query = {};
+        let query = {};
         if(typeof account_id === 'undefined') {
-            reject({error:{code:400}});
+            reject(errorparsing({error_code:400}));
             log4n.debug('done - missing paramater (account_id)');
         } else {
             query.account_id = account_id;
@@ -17,22 +18,21 @@ module.exports = function (account_id) {
                 .then(datas => {
                     // log4n.object(datas, 'datas');
                     if (typeof datas === 'undefined') {
-                        reject({error:{code:500}});
+                        reject(errorparsing({error_code:500}));
                         log4n.debug('done - no reult');
                     } else {
-                        if (typeof datas.error === 'undefined') {
+                        if (typeof datas.error_code === 'undefined') {
                             resolve(datas);
                             log4n.debug('done - ok');
                         } else {
-                            reject(datas);
+                            reject(errorparsing(datas));
                             log4n.debug('done - response error');
                         }
                     }
                 })
                 .catch(error => {
-                    if (typeof error === 'undefined') error = {error: {code: 500}};
                     log4n.object(error, 'error');
-                    reject(error);
+                    reject(errorparsing(error));
                     log4n.debug('done - global catch')
                 });
         }

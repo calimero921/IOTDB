@@ -21,6 +21,7 @@ app.set('trust proxy', 1);
 require('./routes/main') (app);
 
 global.globalConnection = null;
+global.globalMQTT = null;
 
 // uncomment after placing your favicon in /public
 // view engine setup
@@ -56,8 +57,8 @@ server.on('error', onError);
 server.on('listening', onListening);
 server.on('stop', onStop)
 
-mqtt = new MQTTEngine();
-mqtt.start();
+global.globalMQTT = new MQTTEngine();
+global.globalMQTT.start();
 
 module.exports = app;
 

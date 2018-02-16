@@ -12,7 +12,7 @@ module.exports = function (content, response, logger) {
     } else {
         var message = 'code: ';
         message += content.error_code;
-        if(typeof content.error_message !== 'undefined') message += ' / message: ' + content.error.message;
+        if(typeof content.error_message !== 'undefined') message += ' / message: ' + content.error_message;
         logger.error(message);
         response
             .status(content.error_code)

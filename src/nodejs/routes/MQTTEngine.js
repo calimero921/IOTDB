@@ -2,7 +2,7 @@ const configMQTT = require('../config/mqtt.js');
 const Log4n = require('../utils/log4n.js');
 const mqtt = require('mqtt');
 const checkJSON = require('../utils/checkJSON.js');
-const mqttroute = require('./mqttroute.js')
+const mqttroute = require('../mqttroutes/mqttroute.js')
 
 const log4n = new Log4n('/MQTTEngine');
 let clientMQTT = {};
@@ -12,8 +12,9 @@ function MQTTEngine() {
     mqttURL = 'mqtt://' + configMQTT.server + ':' + configMQTT.port
 }
 
-module.exports = MQTTEngine;
-
+/**
+ *
+ */
 MQTTEngine.prototype.start = function() {
     clientMQTT = mqtt.connect(mqttURL);
     clientMQTT.on('connect', onConnect);
@@ -26,6 +27,10 @@ MQTTEngine.prototype.start = function() {
     clientMQTT.on('packetreceive', onPacketReceived);
 };
 
+
+/**
+ *
+ */
 MQTTEngine.prototype.stop = function() {
     clientMQTT.end();
 };
@@ -33,10 +38,53 @@ MQTTEngine.prototype.stop = function() {
 /**
  *
  */
+MQTTEngine.prototype.publish = function(topic, message) {
+    log4n.debug('MQTT client publish starting');
+    // log4n.object(topic, 'topic');
+    // log4n.object(message.toString(), 'message');
+
+    clientMQTT.publish(topic, JSON.stringify(message), error => {
+        log4n.object(error, 'publish error');
+    });
+    log4n.debug('MQTT client publish done');
+};
+
+/**
+ *
+ */
+MQTTEngine.prototype.subscribe = function(topic) {
+    log4n.debug('MQTT client subscribe starting');
+    // log4n.object(topic, 'topic');
+
+    clientMQTT.subscribe(topic, (error, granted) => {
+        if (typeof error === 'undefined') {
+            log4n.object(granted, 'subscribe granted');
+        } else {
+            log4n.object(error, 'subscribe error');
+        }
+    });
+    log4n.debug('MQTT client subscribe done');
+};
+
+/**
+ *
+ */
+MQTTEngine.prototype.unsubscribe = function(topic) {
+    log4n.debug('MQTT client unsubscribe starting');
+    // log4n.object(topic, 'topic');
+
+    clientMQTT.unsubscribe(topic, error => {
+        log4n.object(error, 'unsubscribe error');
+    });
+    log4n.debug('MQTT client unsubscribe done');
+};
+
+/**
+ *
+ */
 function onConnect() {
     log4n.debug('MQTT client connecting');
-    clientMQTT.subscribe(configMQTT.topic_system);
-    clientMQTT.subscribe(configMQTT.topic_register);
+    this.subscribe(configMQTT.topic_register);
     log4n.debug('MQTT client connected');
 }
 
@@ -83,10 +131,15 @@ function onMessage(topic, message, packet) {
     // log4n.object(packet, 'packet');
 
     let result = checkJSON(message);
-    log4n.object(result, 'result');
+    // log4n.object(result, 'result');
 
-    mqttroute(topic, result);
-    log4n.debug('MQTT client message done');
+    mqttroute(topic, result)
+        .then(datas => {
+            log4n.debug('MQTT client message done');
+        })
+        .catch(error => {
+            log4n.debug('MQTT client message error');
+        });
 }
 
 /**
@@ -106,3 +159,5 @@ function onPacketReceived(packet) {
     // log4n.object(packet, 'packet');
     // log4n.debug('MQTT client received packet');
 }
+
+module.exports = MQTTEngine;
