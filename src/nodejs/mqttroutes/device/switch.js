@@ -15,12 +15,9 @@ module.exports = function (content) {
             if (typeof content === 'undefined') {
                 //aucune donnée postée
                 log4n.debug('done - no data');
-                reject(errorparsing({error_code: 400}));
+                reject({code: 400});
             } else {
-                let query = {
-                    "serial_number": content.serial_number,
-                    "manufacturer": content.manufacturer
-                };
+                let query = {"id": content.id};
                 get(query, "", "", true)
                     .then(result => {
                         // log4n.object(result, 'result');
@@ -42,12 +39,11 @@ module.exports = function (content) {
                         if (typeof datas === 'undefined') {
                             //aucune données recue du processus d'enregistrement
                             log4n.debug('done - no data');
-                            reject(errorparsing({error_code: 500}));
+                            reject(errorparsing({code: 500}));
                         } else {
                             //recherche d'un code erreur précédent
                             if (typeof datas.error_code === 'undefined') {
                                 //device enregistrée
-                                log4n.debug('device stored');
                                 let message = {"message": "registred", "payload" : datas};
                                 global.globalMQTT.publish(configMQTT.topic_system, message);
                                 log4n.debug('done - ok');

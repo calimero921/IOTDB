@@ -41,10 +41,14 @@ MQTTEngine.prototype.stop = function() {
 MQTTEngine.prototype.publish = function(topic, message) {
     log4n.debug('MQTT client publish starting');
     // log4n.object(topic, 'topic');
-    // log4n.object(message.toString(), 'message');
+    // log4n.object(JSON.stringify(message), 'message');
 
     clientMQTT.publish(topic, JSON.stringify(message), error => {
-        log4n.object(error, 'publish error');
+        if(typeof error === 'undefined') {
+            log4n.debug('publish ok');
+        } else {
+            log4n.object(error, 'publish error');
+        }
     });
     log4n.debug('MQTT client publish done');
 };
@@ -74,7 +78,11 @@ MQTTEngine.prototype.unsubscribe = function(topic) {
     // log4n.object(topic, 'topic');
 
     clientMQTT.unsubscribe(topic, error => {
-        log4n.object(error, 'unsubscribe error');
+        if(typeof error === 'undefined') {
+            log4n.debug('unsubscribe ok');
+        } else {
+            log4n.object(error, 'unsubscribe error');
+        }
     });
     log4n.debug('MQTT client unsubscribe done');
 };
@@ -84,7 +92,14 @@ MQTTEngine.prototype.unsubscribe = function(topic) {
  */
 function onConnect() {
     log4n.debug('MQTT client connecting');
+    log4n.debug('MQTT client subscribing "' + configMQTT.topic_register + '" topic');
     this.subscribe(configMQTT.topic_register);
+    log4n.debug('MQTT client subscribing "' + configMQTT.topic_sensor + '" topic');
+    this.subscribe(configMQTT.topic_sensor);
+    log4n.debug('MQTT client subscribing "' + configMQTT.topic_slave + '" topic');
+    this.subscribe(configMQTT.topic_slave);
+    log4n.debug('MQTT client subscribing "' + configMQTT.topic_switch + '" topic');
+    this.subscribe(configMQTT.topic_switch);
     log4n.debug('MQTT client connected');
 }
 

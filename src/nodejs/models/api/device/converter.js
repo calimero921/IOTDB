@@ -36,7 +36,7 @@ Converter.prototype.json2db = function (data) {
                                 "type": {"enum": ["sensor", "switch", 'slave']},
                                 "publish": {"type": "string"},
                                 "subscribe": {"type": "string"},
-                                "last_value": {"type": "integer"}
+                                "last_value": {"type": "string"}
                             },
                             "required": ["name", "type"]
                         }
@@ -63,9 +63,10 @@ Converter.prototype.json2db = function (data) {
                     if (typeof valid.software_version !== 'undefined') result.software_version = valid.software_version;
                     if (typeof valid.capabilities !== 'undefined') {
                         result.capabilities = [];
-                        for (let i = 0; i < valid.capabilities.length; i++) {
+                        for (let i in valid.capabilities) {
                             let datas = valid.capabilities[i];
-                            let capability = {"name": datas.name, "type": datas.type, "last_value": 0};
+                            // log4n.object(datas, 'datas');
+                            let capability = {"name": datas.name, "type": datas.type, "last_value": datas.last_value};
                             switch (datas.type.toUpperCase()) {
                                 case 'SENSOR':
                                     capability.publish = "sensor";
@@ -137,7 +138,7 @@ Converter.prototype.db2json = function (data) {
                                 "type": {"enum": ["sensor", "switch", 'slave']},
                                 "publish": {"type": "string"},
                                 "subscribe": {"type": "string"},
-                                "last_value": {"type": "number"}
+                                "last_value": {"type": "string"}
                             },
                             "required": ["name", "type", "publish", "subscribe", "last_value"]
                         }

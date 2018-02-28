@@ -2,39 +2,41 @@ const Log4n = require('../../utils/log4n.js');
 const errorparsing = require('../../utils/errorparsing.js');
 const configMQTT = require('../../config/mqtt.js');
 const get = require('../../models/api/device/get.js');
-const set = require('../../models/api/device/set.js');
 const update = require('../../models/api/device/patch.js');
 
 module.exports = function (content) {
-    const log4n = new Log4n('/routes/api/device/register');
-    // log4n.object(content, 'content');
+    const log4n = new Log4n('/routes/api/device/sensor');
+    log4n.object(content, 'content');
 
     //traitement d'enregistrement dans la base
     return new Promise(function (resolve, reject) {
-        try{
+        try {
             if (typeof content === 'undefined') {
                 //aucune donnée postée
                 log4n.debug('done - no data');
                 reject(errorparsing({error_code: 400}));
             } else {
-                let query = {
-                    "serial_number": content.serial_number,
-                    "manufacturer": content.manufacturer
-                };
+                let query = {"id": content.id};
                 get(query, "", "", true)
                     .then(result => {
                         // log4n.object(result, 'result');
                         if (typeof result === 'undefined') {
-                            //enregistrement des données postées
-                            log4n.debug('inserting device');
-                            return set(content);
+                            //enregistrement absent
+                            log4n.debug('unknown device');
+                            return errorparsing({error_code: 404});
                         } else {
                             //enregistrement des données postées
-                            log4n.debug('updating device');
+                            log4n.debug('updating data');
                             let record = result[0];
-                            content.key = record.key;
-                            content.creation_date = record.creation_date;
-                            return update(record.id, content);
+                            // log4n.object(record, 'record');
+                            for (let i = 0; i < content.capabilities.length; i++) {
+                                for (let j = 0; j < record.capabilities.length; j++) {
+                                    if (content.capabilities[i].name === record.capabilities[j].name) {
+                                        record.capabilities[j].last_value = content.capabilities[i].value;
+                                    }
+                                }
+                            }
+                            return update(result[0].id, record);
                         }
                     })
                     .then(datas => {
@@ -46,9 +48,9 @@ module.exports = function (content) {
                         } else {
                             //recherche d'un code erreur précédent
                             if (typeof datas.error_code === 'undefined') {
-                                //device enregistrée
-                                log4n.debug('device stored');
-                                let message = {"message": "registred", "payload" : datas};
+                                //data enregistrées
+                                log4n.debug('data updated');
+                                let message = {"message": "ok"};
                                 global.globalMQTT.publish(configMQTT.topic_system, message);
                                 log4n.debug('done - ok');
                                 resolve();
@@ -58,6 +60,7 @@ module.exports = function (content) {
                                 reject(errorparsing(datas));
                             }
                         }
+                        resolve();
                     })
                     .catch(error => {
                         console.log(error);
@@ -66,11 +69,14 @@ module.exports = function (content) {
                         reject(errorparsing(error));
                     });
             }
-        } catch(error) {
+        } catch
+            (error) {
             console.log(error);
             log4n.debug('done - global catch');
             log4n.object(error, 'error');
             reject(errorparsing(error));
         }
-    });
-};
+    })
+        ;
+}
+;
