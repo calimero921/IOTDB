@@ -54,7 +54,7 @@ module.exports = function (collection, query, parameter, overtake) {
                         .catch((error) => {
                             log4n.object(error, 'error');
                             reject(errorparsing(error));
-                            globalConnection = null;
+                            global.globalConnection = null;
                             log4n.debug('done - call catch')
                         });
                 } catch (error) {

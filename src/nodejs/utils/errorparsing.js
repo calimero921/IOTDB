@@ -3,8 +3,6 @@ const Log4n = require('./log4n.js');
 module.exports = function (error) {
     const log4n = new Log4n('/models/errorparsing');
 
-    let result = {};
-
     if (typeof error === 'undefined') {
         log4n.debug('done unknown');
         return {error_code: 500, error_message: 'unknown error'};

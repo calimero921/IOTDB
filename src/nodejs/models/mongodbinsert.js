@@ -36,7 +36,7 @@ module.exports = function (collection, query) {
                         .catch((error) => {
                             log4n.object(error, 'error');
                             resolve(errorparsing(error));
-                            globalConnection = null;
+	                        global.globalConnection = null;
                             log4n.debug('done - call catch')
                         });
                 } catch (error) {
