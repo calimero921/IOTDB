@@ -49,7 +49,7 @@ module.exports = function (content) {
                                 //device enregistrée
                                 log4n.debug('device stored');
                                 let message = {"message": "registred", "payload" : datas};
-                                global.globalMQTT.publish(configMQTT.topic_system, message);
+                                global.mqttConnexion.publish(configMQTT.topic_system, message);
                                 log4n.debug('done - ok');
                                 resolve();
                             } else {

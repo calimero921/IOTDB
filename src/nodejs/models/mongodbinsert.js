@@ -11,7 +11,7 @@ module.exports = function (collection, query) {
         connexion()
             .then(() => {
                 try {
-                    let mdbcollection = globalConnection.collection(collection);
+                    let mdbcollection = mongodbConnexion.collection(collection);
                     mdbcollection.insertOne(query)
                         .then(datas => {
                             // console.log('datas: ', datas);
@@ -36,7 +36,7 @@ module.exports = function (collection, query) {
                         .catch((error) => {
                             log4n.object(error, 'error');
                             resolve(errorparsing(error));
-	                        global.globalConnection = null;
+	                        global.mongodbConnexion = null;
                             log4n.debug('done - call catch')
                         });
                 } catch (error) {

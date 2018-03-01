@@ -2,13 +2,13 @@
  * Module dependencies.
  */
 const fs = require('fs');
-const config = require('./config/server.js');
 const https = require('https');
-const express = require('express');
 const path = require('path');
+const config = require('./config/server.js');
+const express = require('express');
+const bodyParser = require('body-parser');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
 const MQTTEngine = require('./routes/MQTTEngine.js');
 const Log4n = require('./utils/log4n.js');
 const connexion = require('./models/mongoconnexion.js');
@@ -20,8 +20,8 @@ log4n.debug("Starting server ...");
 app.set('trust proxy', 1);
 require('./routes/main') (app);
 
-global.globalConnection = null;
-global.globalMQTT = null;
+global.mongodbConnexion = null;
+global.mqttConnexion = null;
 
 // uncomment after placing your favicon in /public
 // view engine setup
@@ -57,8 +57,8 @@ server.on('error', onError);
 server.on('listening', onListening);
 server.on('stop', onStop)
 
-global.globalMQTT = new MQTTEngine();
-global.globalMQTT.start();
+global.mqttConnexion = new MQTTEngine();
+global.mqttConnexion.start();
 
 module.exports = app;
 
@@ -142,5 +142,5 @@ function onListening() {
  * Event listener for HTTP server "stop" event.
  */
 function onStop() {
-    mqtt.stop();
+	global.mqttConnexion.stop();
 }

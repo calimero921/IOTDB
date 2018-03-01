@@ -12,7 +12,7 @@ module.exports = function (collection, query, parameter) {
         connexion()
             .then(() => {
             try {
-                let mdbcollection = globalConnection.collection(collection);
+                let mdbcollection = mongodbConnexion.collection(collection);
                 mdbcollection.findOneAndReplace(
                     query,
                     parameter,
@@ -43,7 +43,7 @@ module.exports = function (collection, query, parameter) {
                     .catch((error) => {
                         log4n.object(error, 'error');
                         reject(errorparsing(error));
-	                    global.globalConnection = null;
+	                    global.mongodbConnexion = null;
                         log4n.debug('done - call catch')
                     });
             } catch (error) {

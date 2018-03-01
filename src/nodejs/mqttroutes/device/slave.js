@@ -48,7 +48,7 @@ module.exports = function (content) {
                             if (typeof datas.error_code === 'undefined') {
                                 //device enregistrée
                                 let message = {"message": "registred", "payload" : datas};
-                                global.globalMQTT.publish(configMQTT.topic_system, message);
+                                global.mqttConnexion.publish(configMQTT.topic_system, message);
                                 log4n.debug('done - ok');
                                 resolve();
                             } else {

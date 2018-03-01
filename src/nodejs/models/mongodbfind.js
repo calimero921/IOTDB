@@ -21,7 +21,7 @@ module.exports = function (collection, query, parameter, overtake) {
                         if (typeof parameter.offset !== 'undefined') offset = parseInt(parameter.offset);
                         if (typeof parameter.limit !== 'undefined') limit = parseInt(parameter.limit);
                     }
-                    let mdbcollection = globalConnection.collection(collection);
+                    let mdbcollection = mongodbConnexion.collection(collection);
                     mdbcollection.find(query)
                         .skip(offset)
                         .limit(limit)
@@ -54,7 +54,7 @@ module.exports = function (collection, query, parameter, overtake) {
                         .catch((error) => {
                             log4n.object(error, 'error');
                             reject(errorparsing(error));
-                            global.globalConnection = null;
+                            global.mongodbConnexion = null;
                             log4n.debug('done - call catch')
                         });
                 } catch (error) {

@@ -13,7 +13,7 @@ module.exports = function (collection, query, parameter) {
             .then(() => {
                 try {
                     let operators = {"$set": parameter};
-                    let mdbcollection = globalConnection.collection(collection);
+                    let mdbcollection = mongodbConnexion.collection(collection);
                     mdbcollection.findOneAndUpdate(
                         query,
                         operators,
@@ -43,7 +43,7 @@ module.exports = function (collection, query, parameter) {
                         .catch((error) => {
                             log4n.object(error, 'error');
                             reject(errorparsing(error));
-	                        global.globalConnection = null;
+	                        global.mongodbConnexion = null;
                             log4n.debug('done - call catch')
                         });
                 } catch (error) {

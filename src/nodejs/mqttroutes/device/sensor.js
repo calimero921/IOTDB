@@ -51,7 +51,7 @@ module.exports = function (content) {
                                 //data enregistrées
                                 log4n.debug('data updated');
                                 let message = {"message": "ok"};
-                                global.globalMQTT.publish(configMQTT.topic_system, message);
+                                global.mqttConnexion.publish(configMQTT.topic_system, message);
                                 log4n.debug('done - ok');
                                 resolve();
                             } else {
