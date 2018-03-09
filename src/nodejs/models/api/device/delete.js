@@ -11,9 +11,9 @@ module.exports = function (device_id) {
         var query = {};
         if(typeof device_id === 'undefined') {
             reject(errorparsing({error_code:400}));
-            log4n.debug('done - missing paramater (device_id)');
+            log4n.debug('done - missing paramater');
         } else {
-            query.device_id = device_id;
+            query.id = device_id;
             mongoClient('device', query)
                 .then(datas => {
                     // log4n.object(datas, 'datas');
@@ -31,10 +31,9 @@ module.exports = function (device_id) {
                     }
                 })
                 .catch(error => {
-                    if (typeof error === 'undefined') error = {error_code: 500};
                     log4n.object(error, 'error');
                     reject(errorparsing(error));
-                    log4n.debug('done - global catch')
+                    log4n.debug('done - promise catch')
                 });
         }
     });

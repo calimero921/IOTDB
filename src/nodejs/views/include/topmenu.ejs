@@ -1,0 +1,35 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="collapse navbar-collapse">
+        <div class="navbar-header">
+            <a class="brand navbar-brand" href="/">cSAM</a>
+        </div>
+        <%if(typeof user !== 'undefined') {%>
+        <div class="navbar-inner">
+            <ul class="nav navbar-nav navbar-right">
+                <li <%if(current_menu == 'reports') {%>class="active"<%}%>><a href="/reports">Reports</a></li>
+                <li <%if(current_menu == 'inventory') {%>class="active"<%}%>><a href="/inventory">Inventory</a></li>
+                <li <%if(current_menu == 'simulation') {%>class="active"<%}%>><a href="/simulation">Simulation</a></li>
+                <li <%if(current_menu == 'graph') {%>class="active"<%}%>><a href="/graph">Graph</a></li>
+                <%if(user.admin) {%>
+                <li id="adm-menu" class="dropdown">
+                    <a href="#" id="admin" role="button" class="dropdown-toggle" data-toggle="dropdown">Administration<b class="caret"></b></a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="admin">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/user">User</a></li>
+                        <li class="divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/contract">Contract</a></li>
+                    </ul>
+                </li>
+                <%}%>
+                <li id="fat-menu" class="dropdown">
+                    <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                        <%=user.firstname%> <%=user.lastname%> <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/logout">Déconnexion</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <%}%>
+    </div>
+</div>

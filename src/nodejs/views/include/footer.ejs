@@ -1,0 +1,6 @@
+<footer>
+    <%if(typeof user !== 'undefined') {%>
+    <p class="pull-left">last connection : <%=user.last%></p>
+    <%}%>
+    <p class="pull-right">&copy; Orange <%=new Date().getFullYear()%></p>
+</footer>

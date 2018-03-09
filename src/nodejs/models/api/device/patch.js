@@ -21,7 +21,6 @@ module.exports = function (device_id, new_device) {
                 log4n.debug('preparing datas');
                 query.id = device_id;
                 //au cas ou on usurperait le device
-                new_device.id = device_id;
                 converter.json2db(new_device)
                     .then(parameter => {
                         // log4n.object(parameter,'parameter');
@@ -58,9 +57,9 @@ module.exports = function (device_id, new_device) {
                     });
             }
         } catch(error) {
-            log4n.debug('done - global catch')
             log4n.object(error, 'error');
             reject(errorparsing(error));
+            log4n.debug('done - global catch');
         }
     });
 };

@@ -3,7 +3,7 @@ const Log4n = require('../../../utils/log4n.js');
 const errorparsing = require('../../../utils/errorparsing.js');
 const mongoClient = require('../../mongodbinsert.js');
 const Converter = require('./converter.js');
-const Generator = require('./generator.js');
+const Generator = require('../generator.js');
 
 module.exports = function (device) {
     const log4n = new Log4n('/models/api/device/set');
@@ -13,18 +13,20 @@ module.exports = function (device) {
     return new Promise(function (resolve, reject) {
         try{
             log4n.debug('storing device');
-            let generator = new Generator();
-            let converter = new Converter();
+            const generator = new Generator();
+            const converter = new Converter();
             if (typeof device === 'undefined') {
-                log4n.log('error, no data');
                 reject(errorparsing({error_code: '400'}));
+                log4n.log('done - missing parameter');
             } else {
                 log4n.debug('preparing datas');
-                device.id = generator.idgen();
-                device.key = generator.keygen();
-                device.creation_date = parseInt(Moment().format('x'));
                 converter.json2db(device)
                     .then(query => {
+                        //ajout des informations générées par le serveur
+                        query.id = generator.idgen();
+                        query.key = generator.keygen();
+                        query.creation_date = parseInt(Moment().format('x'));
+                        query.last_connexion_date = parseInt(Moment().format('x'));
                         log4n.object(query, 'query');
                         return mongoClient('device', query);
                     })
@@ -44,24 +46,24 @@ module.exports = function (device) {
                             reject(errorparsing({error_code: '500'}));
                         } else {
                             if(typeof datas.error_code === "undefined") {
-                                log4n.debug('done - ok');
                                 resolve(datas);
+                                log4n.debug('done - ok');
                             } else {
-                                log4n.debug('done - wrong data');
                                 reject(datas);
+                                log4n.debug('done - wrong data');
                             }
                         }
                     })
                     .catch(error => {
-                        log4n.debug('done - global catch');
                         log4n.object(error, 'error');
                         reject(errorparsing(error));
+                        log4n.debug('done - promise catch');
                     });
             }
         } catch(error) {
-            log4n.debug('done - global catch');
             log4n.object(error, 'error');
             reject(errorparsing(error));
+            log4n.debug('done - global catch');
         }
     });
 };

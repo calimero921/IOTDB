@@ -12,7 +12,7 @@ module.exports = function (req, res) {
             // log4n.object(datas, 'datas');
             if(typeof datas === 'undefined') {
                 //aucune donnée postée
-                return {error:{code:400}};
+                return {error_code:400};
             } else {
                 //lecture des données postées
                 return set(datas);
@@ -22,11 +22,11 @@ module.exports = function (req, res) {
             // console.log('datas:', datas);
             if(typeof datas === 'undefined') {
                 //aucune données recue du processus d'enregistrement
-                responseError({error:{code: 500}}, res, log4n);
+                responseError({error_code: 404}, res, log4n);
                 log4n.debug('done - no data');
             } else {
                 //recherche d'un code erreur précédent
-                if(typeof datas.code === 'undefined') {
+                if(typeof datas.error_code === 'undefined') {
                     //notification enregistrée
                     res.status(201).send(datas);
                     log4n.debug('done - ok');

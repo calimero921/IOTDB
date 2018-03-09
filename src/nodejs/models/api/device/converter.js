@@ -20,7 +20,6 @@ Converter.prototype.json2db = function (data) {
                 "$async": true,
                 "type": "object",
                 "properties": {
-                    "id": {"type": "string", "format": "uuid"},
                     "manufacturer": {"type": "string"},
                     "serial_number": {"type": "string"},
                     "name": {"type": "string"},
@@ -41,10 +40,8 @@ Converter.prototype.json2db = function (data) {
                             "required": ["name", "type"]
                         }
                     },
-                    "key": {"type": "string"},
-                    "last_connexion_date": {"type": "integer"}
                 },
-                "required": ["id", "manufacturer", "serial_number", "name", "class", "software_version", "capabilities", "key"]
+                "required": ["manufacturer", "serial_number", "name", "class", "software_version", "capabilities"]
             };
 
             // log4n.object(jsonSchema, 'jsonSchema');
@@ -54,11 +51,9 @@ Converter.prototype.json2db = function (data) {
             validate(data)
                 .then(valid => {
                     // log4n.object(valid, 'valid');
-                    if (typeof valid.id !== 'undefined') result.id = valid.id;
                     if (typeof valid.manufacturer !== 'undefined') result.manufacturer = valid.manufacturer;
                     if (typeof valid.serial_number !== 'undefined') result.serial_number = valid.serial_number;
                     if (typeof valid.name !== 'undefined') result.name = valid.name;
-                    if (typeof valid.creation_date !== 'undefined') result.creation_date = valid.creation_date;
                     if (typeof valid.class !== 'undefined') result.class = valid.class;
                     if (typeof valid.software_version !== 'undefined') result.software_version = valid.software_version;
                     if (typeof valid.capabilities !== 'undefined') {
@@ -89,21 +84,22 @@ Converter.prototype.json2db = function (data) {
                             result.capabilities.push(capability);
                         }
                     }
-                    if (typeof valid.key !== 'undefined') result.key = valid.key;
-                    result.last_connexion_date = parseInt(Moment().format('x'));
-                    log4n.debug('done - ok');
                     // log4n.object(result, 'result');
                     resolve(result);
+                    log4n.debug('done - ok');
                 })
                 .catch(error => {
+                    log4n.object(error, 'error');
                     reject(errorparsing({
                         error_code: 500,
                         error_message: error.message + " (" + error.errors[0].dataPath + " " + error.errors[0].message + ")"
                     }));
+                    log4n.debug('done - promise catch');
                 });
         } catch (error) {
             log4n.object(error, 'error');
             reject(errorparsing(error));
+            log4n.debug('done - global catch');
         }
     });
 };

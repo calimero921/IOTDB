@@ -11,9 +11,9 @@ module.exports = function (account_id) {
         let query = {};
         if(typeof account_id === 'undefined') {
             reject(errorparsing({error_code:400}));
-            log4n.debug('done - missing paramater (account_id)');
+            log4n.debug('done - missing paramater');
         } else {
-            query.account_id = account_id;
+            query.id = account_id;
             mongoClient('account', query)
                 .then(datas => {
                     // log4n.object(datas, 'datas');
@@ -33,7 +33,7 @@ module.exports = function (account_id) {
                 .catch(error => {
                     log4n.object(error, 'error');
                     reject(errorparsing(error));
-                    log4n.debug('done - global catch')
+                    log4n.debug('done - promise catch')
                 });
         }
     });
