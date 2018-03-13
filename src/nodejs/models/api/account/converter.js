@@ -1,7 +1,6 @@
-const Moment = require('moment');
+const Ajv = require('ajv');
 const Log4n = require('../../../utils/log4n.js');
 const errorparsing = require('../../../utils/errorparsing.js');
-const Ajv = require('ajv');
 
 function Converter() {
 }
@@ -20,10 +19,16 @@ Converter.prototype.json2db = function (data) {
                 "$async": true,
                 "type": "object",
                 "properties": {
+                    "id": {"type": "string", "format": "uuid"},
                     "firstname": {"type": "string"},
                     "lastname": {"type": "string"},
                     "email": {"type": "string"},
-                    "password": {"type": "string"}
+                    "password": {"type": "string"},
+                    "session_id": {"type": "string"},
+                    "creation_date": {"type": "integer"},
+                    "current_connexion_date": {"type": "integer"},
+                    "last_connexion_date": {"type": "integer"},
+                    "token": {"type": "string"}
                 },
                 "required": ["firstname", "lastname", "email", "password"]
             };
@@ -35,10 +40,16 @@ Converter.prototype.json2db = function (data) {
                 .then(valid => {
                     // log4n.object(valid, 'valid');
                     if (typeof data !== 'undefined') {
-                        if (typeof valid.firstname !== 'undefined') result.firstname = valid.firstname;
-                        if (typeof valid.lastname !== 'undefined') result.lastname = valid.lastname;
-                        if (typeof valid.email !== 'undefined') result.email = valid.email;
-                        if (typeof valid.password !== 'undefined') result.password = valid.password;
+                        if (typeof valid.id !== 'undefined') result.id = valid.id;
+                        result.firstname = valid.firstname;
+                        result.lastname = valid.lastname;
+                        result.email = valid.email;
+                        result.password = valid.password;
+                        result.session_id = valid.session_id;
+                        if (typeof valid.creation_date !== 'undefined') result.creation_date = valid.creation_date;
+                        if (typeof valid.current_connexion_date !== 'undefined') result.current_connexion_date = valid.current_connexion_date;
+                        if (typeof valid.last_connexion_date !== 'undefined') result.last_connexion_date = valid.last_connexion_date;
+                        if (typeof valid.token !== 'undefined') result.token = valid.token;
                     }
 
                     log4n.object(result, 'result');
@@ -80,10 +91,13 @@ Converter.prototype.db2json = function (data) {
                     "lastname": {"type": "string"},
                     "email": {"type": "string"},
                     "password": {"type": "string"},
+                    "session_id": {"type": "string"},
                     "creation_date": {"type": "integer"},
-                    "last_connexion_date": {"type": "integer"}
+                    "current_connexion_date": {"type": "integer"},
+                    "last_connexion_date": {"type": "integer"},
+                    "token": {"type": "string"}
                 },
-                "required": ["id", "firstname", "lastname", "email", "password", "creation_date", "last_connexion_date"]
+                "required": ["id", "firstname", "lastname", "email", "password", "session_id", "creation_date", "current_connexion_date", "last_connexion_date", "token"]
             };
             // log4n.object(dbSchema, 'dbSchema');
             let validate = ajv.compile(dbSchema);
@@ -92,13 +106,16 @@ Converter.prototype.db2json = function (data) {
             validate(data)
                 .then(valid => {
                     // log4n.object(valid, 'valid');
-                    if (typeof valid.id !== 'undefined') result.id = valid.id;
-                    if (typeof valid.firstname !== 'undefined') result.firstname = valid.firstname;
-                    if (typeof valid.lastname !== 'undefined') result.lastname = valid.lastname;
-                    if (typeof valid.email !== 'undefined') result.email = valid.email;
-                    if (typeof valid.password !== 'undefined') result.password = valid.password;
-                    if (typeof valid.creation_date !== 'undefined') result.creation_date = valid.creation_date;
-                    if (typeof valid.last_connexion_date !== 'undefined') result.last_connexion_date = valid.last_connexion_date;
+                    result.id = valid.id;
+                    result.firstname = valid.firstname;
+                    result.lastname = valid.lastname;
+                    result.email = valid.email;
+                    result.password = valid.password;
+                    result.session_id = valid.session_id;
+                    result.creation_date = valid.creation_date;
+                    result.current_connexion_date = valid.current_connexion_date;
+                    result.last_connexion_date = valid.last_connexion_date;
+                    result.token = valid.token;
 
                     // log4n.object(result, 'result');
                     resolve(result);

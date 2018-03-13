@@ -7,7 +7,7 @@
         var result;
         var login = $("#lemail").val();
 
-        $.getJSON('/user/recover/' + login,
+        $.getJSON('/v1/account/recover/' + login,
             function(data) {
                 if(typeof data === 'undefined') {
                     displayResult(false, "", "error while verifying your credentials");

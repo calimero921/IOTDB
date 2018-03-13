@@ -12,7 +12,7 @@ module.exports = function (account) {
     //traitement d'enregistrement dans la base
     return new Promise(function (resolve, reject) {
         try{
-            log4n.debug('storing device');
+            log4n.debug('storing user');
             const generator = new Generator();
             const converter = new Converter();
             if (typeof account === 'undefined') {
@@ -22,8 +22,11 @@ module.exports = function (account) {
                 converter.json2db(account)
                     .then(query => {
                         query.id = generator.idgen();
+                        query.current_connexion_date = parseInt(moment().format('x'));
                         query.last_connexion_date = parseInt(moment().format('x'));
                         query.creation_date = parseInt(moment().format('x'));
+                        query.session_id = "no session";
+                        query.token = generator.keygen();
                         log4n.object(query, 'query');
                         return mongoClient('account', query);
                     })

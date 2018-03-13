@@ -2,64 +2,731 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3383af14-4211-4404-ab8c-b66577d94767" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/config/smtp.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/account/converter.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/generator.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/users/check.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/users/cleanSession.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/users/delete.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/users/getAll.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/users/getByEmail.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/users/getByEmailPassword.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/users/getBySession.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/users/getByToken.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/users/init.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/users/set.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/users/setCurrent.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/users/setPassword.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/users/setSession.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/users/setToken.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/users/trans.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/routes/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/utils/getconfig.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/admin/user/edit.ejs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/admin/user/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/admin/user/list.ejs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/admin/user/scripts.ejs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/error/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/error/scripts.ejs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/identity/recover/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/identity/recover/scripts.ejs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/identity/reset/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/identity/reset/scripts.ejs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/identity/signin/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/identity/signin/scripts.ejs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/include/displaydialog.ejs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/include/displayresult.ejs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/include/footer.ejs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/include/head-nomenu.ejs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/include/head.ejs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/include/topmenu.ejs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/reports/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/views/reports/scripts.ejs" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/account/check.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/account/cleanSession.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/account/getByEmail.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/account/getByEmailPassword.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/account/getBySession.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/account/getByToken.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/account/setPassword.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/account/setSession.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/models/api/account/setToken.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/.gitignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/bower.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/readme.adoc" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/scripts/codemirror-cypher.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/scripts/codemirror.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/scripts/cy2neod3.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/scripts/cypher.datatable.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/scripts/data.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/scripts/jquery.dataTables.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/scripts/neo4d3.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/scripts/neod3-visualization.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/scripts/neod3.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/scripts/sweet-alert.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/scripts/vendor.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/styles/codemirror-neo.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/styles/codemirror.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/styles/cy2neo.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/styles/datatable.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/styles/fonts/FontAwesome.otf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/styles/fonts/fontawesome-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/styles/fonts/fontawesome-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/styles/fonts/fontawesome-webfont.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/styles/fonts/fontawesome-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/styles/gh-fork-ribbon.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/styles/images/maze-black.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/styles/neod3.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/styles/sweet-alert.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/cy2neo/styles/vendor.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/images/al.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/images/glyphicons-halflings-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/images/glyphicons-halflings.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/javascripts/handlebars-v4.0.5.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/javascripts/jquery-1.7.2.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bluebird/3.5.0/bluebird.core.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bluebird/3.5.0/bluebird.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/boosted2015.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/boosted2015.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/boosted2015.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/boosted2015.min.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/boostedIE82015.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/boostedIE82015.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/boostedIE82015.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/boostedIE82015.min.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/bootstrap-orange2015.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/bootstrap-orange2015.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/bootstrap-orange2015.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/bootstrap-orange2015.min.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/bootstrap-orangeIE82015.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/bootstrap-orangeIE82015.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/bootstrap-orangeIE82015.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/bootstrap-orangeIE82015.min.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/orangeHelvetica.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/orangeHelvetica.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/orangeHelvetica.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/orangeHelvetica.min.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/orangeIcons.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/orangeIcons.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/orangeIcons.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/css/orangeIcons.min.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/HelvNeue55_W1G.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/HelvNeue55_W1G.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/HelvNeue55_W1G.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/HelvNeue55_W1G.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/HelvNeue55_W1G.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/HelvNeue75_W1G.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/HelvNeue75_W1G.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/HelvNeue75_W1G.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/HelvNeue75_W1G.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/HelvNeue75_W1G.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/boosted.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/boosted.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/boosted.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/boosted.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/glyphicons-halflings-regular.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/glyphicons-halflings-regular.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/glyphicons-halflings-regular.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/glyphicons-halflings-regular.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/glyphicons-halflings-regular.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/icon-orange.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/icon-orange.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/icon-orange.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/fonts/icon-orange.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/images/ORANGE_LOGO_rgb.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/images/home.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/images/index.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/images/logo-orange.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/images/triangle_down.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/images/triangle_sort.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/images/triangle_up.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/js/boosted.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/boosted/3.3.3/js/boosted.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/2.3.2/css/bootstrap-responsive.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/2.3.2/css/bootstrap-responsive.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/2.3.2/css/bootstrap.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/2.3.2/css/bootstrap.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/2.3.2/js/bootstrap.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/2.3.2/js/bootstrap.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/3.3.7/css/bootstrap-theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/3.3.7/css/bootstrap-theme.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/3.3.7/css/bootstrap-theme.min.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/3.3.7/css/bootstrap.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/3.3.7/css/bootstrap.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/3.3.7/css/bootstrap.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/3.3.7/css/bootstrap.min.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/3.3.7/js/bootstrap.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/3.3.7/js/bootstrap.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/bootstrap/3.3.7/js/npm.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/crossfilter/1.3.12/crossfilter.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/crossfilter/1.3.12/crossfilter.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/d3/3.5.17/d3.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/d3/3.5.17/d3.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/d3/4.10.0/API.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/d3/4.10.0/CHANGES.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/d3/4.10.0/LICENSE" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/d3/4.10.0/README.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/d3/4.10.0/d3.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/d3/4.10.0/d3.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/d3/4.9.1/API.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/d3/4.9.1/CHANGES.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/d3/4.9.1/LICENSE" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/d3/4.9.1/README.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/d3/4.9.1/d3.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/d3/4.9.1/d3.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/dc/2.1.8/crossfilter.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/dc/2.1.8/dc.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/dc/2.1.8/dc.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/dc/2.1.8/dc.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/dc/2.1.8/dc.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/dc/2.1.8/dc.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/dc/2.1.8/dc.min.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/html5shiv/3.7.3/html5shiv.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-datatable/1.10.13/jquery.dataTables.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-datatable/1.10.15/jquery.dataTables.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-datatable/1.10.15/jquery.dataTables.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-dynatable/0.3.1/css/jquery.dynatable.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-dynatable/0.3.1/js/jquery.dynatable.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/addons/pager/jquery.tablesorter.pager.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/addons/pager/jquery.tablesorter.pager.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/build.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/build/ParseMaster.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/build/js.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/build/jsmin.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/build/min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/build/pack.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/build/packer.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/build/writeFile.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/changelog" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/assets/ajax-content.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/css/jq.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-ajax.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-empty-table.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-extending-defaults.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-meta-headers.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-meta-parsers.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-meta-sort-list.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-option-debug.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-option-digits.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-option-sort-force.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-option-sort-key.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-option-sort-list.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-option-sort-order.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-option-text-extraction.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-options-headers.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-pager.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-parsers.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-trigger-sort.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-triggers.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-update-cell.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/example-widgets.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/img/external.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/js/docs.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/docs/js/examples.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/jquery-latest.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/jquery.metadata.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/jquery.tablesorter.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/jquery.tablesorter.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/tests/assets/ajax-content.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/tests/cell.metadata.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/tests/checkbox.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/tests/colspan.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/tests/demo.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/tests/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/tests/large.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/tests/lockedOrder.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/tests/metadata.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/tests/multiple-headers.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/tests/pager.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/themes/blue/asc.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/themes/blue/bg.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/themes/blue/blue.zip" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/themes/blue/desc.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/themes/blue/style.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/themes/green/asc.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/themes/green/bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/themes/green/desc.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/themes/green/green.zip" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-tablesorter/2.0.5/themes/green/style.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui-timepicker/1.6.3/jquery-ui-timepicker-addon.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui-timepicker/1.6.3/jquery-ui-timepicker-addon.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/AUTHORS.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/LICENSE.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/external/jquery/jquery.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/images/ui-icons_444444_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/images/ui-icons_555555_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/images/ui-icons_777620_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/images/ui-icons_777777_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/images/ui-icons_cc0000_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/jquery-ui.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/jquery-ui.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/jquery-ui.structure.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/jquery-ui.structure.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/jquery-ui.theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/jquery-ui.theme.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/package.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/base/images/ui-icons_444444_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/base/images/ui-icons_555555_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/base/images/ui-icons_777620_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/base/images/ui-icons_777777_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/base/images/ui-icons_cc0000_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/base/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/base/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/base/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/base/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/black-tie/images/ui-bg_diagonals-thick_8_333333_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/black-tie/images/ui-bg_glass_40_111111_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/black-tie/images/ui-bg_glass_55_1c1c1c_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/black-tie/images/ui-bg_highlight-hard_100_f9f9f9_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/black-tie/images/ui-bg_highlight-hard_40_aaaaaa_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/black-tie/images/ui-bg_highlight-soft_50_aaaaaa_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/black-tie/images/ui-bg_inset-hard_45_cd0a0a_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/black-tie/images/ui-bg_inset-hard_55_ffeb80_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/black-tie/images/ui-icons_222222_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/black-tie/images/ui-icons_4ca300_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/black-tie/images/ui-icons_bbbbbb_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/black-tie/images/ui-icons_ededed_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/black-tie/images/ui-icons_ffcf29_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/black-tie/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/black-tie/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/black-tie/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/black-tie/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/blitzer/images/ui-bg_diagonals-thick_75_f3d8d8_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/blitzer/images/ui-bg_dots-small_65_a6a6a6_2x2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/blitzer/images/ui-bg_glass_55_fbf8ee_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/blitzer/images/ui-bg_highlight-hard_100_eeeeee_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/blitzer/images/ui-bg_highlight-hard_100_f6f6f6_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/blitzer/images/ui-bg_highlight-soft_15_cc0000_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/blitzer/images/ui-icons_004276_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/blitzer/images/ui-icons_cc0000_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/blitzer/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/blitzer/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/blitzer/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/blitzer/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/cupertino/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/cupertino/images/ui-bg_glass_100_e4f1fb_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/cupertino/images/ui-bg_glass_50_3baae3_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/cupertino/images/ui-bg_glass_80_d7ebf9_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/cupertino/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/cupertino/images/ui-bg_highlight-hard_70_000000_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/cupertino/images/ui-bg_highlight-soft_100_deedf7_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/cupertino/images/ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/cupertino/images/ui-icons_2694e8_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/cupertino/images/ui-icons_2e83ff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/cupertino/images/ui-icons_3d80b3_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/cupertino/images/ui-icons_72a7cf_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/cupertino/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/cupertino/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/cupertino/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/cupertino/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dark-hive/images/ui-bg_glass_40_ffc73d_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dark-hive/images/ui-bg_highlight-hard_20_0972a5_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dark-hive/images/ui-bg_highlight-soft_33_003147_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dark-hive/images/ui-bg_highlight-soft_35_222222_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dark-hive/images/ui-bg_highlight-soft_44_444444_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dark-hive/images/ui-bg_highlight-soft_80_eeeeee_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dark-hive/images/ui-bg_loop_25_000000_21x21.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dark-hive/images/ui-icons_222222_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dark-hive/images/ui-icons_4b8e0b_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dark-hive/images/ui-icons_a83300_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dark-hive/images/ui-icons_cccccc_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dark-hive/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dark-hive/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dark-hive/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dark-hive/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dot-luv/images/ui-bg_diagonals-thick_15_0b3e6f_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dot-luv/images/ui-bg_dots-medium_30_0b58a2_4x4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dot-luv/images/ui-bg_dots-small_20_333333_2x2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dot-luv/images/ui-bg_dots-small_30_a32d00_2x2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dot-luv/images/ui-bg_dots-small_40_00498f_2x2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dot-luv/images/ui-bg_gloss-wave_20_111111_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dot-luv/images/ui-icons_00498f_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dot-luv/images/ui-icons_98d2fb_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dot-luv/images/ui-icons_9ccdfc_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dot-luv/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dot-luv/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dot-luv/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/dot-luv/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/eggplant/images/ui-bg_gloss-wave_30_3d3644_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/eggplant/images/ui-bg_highlight-soft_100_dcd9de_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/eggplant/images/ui-bg_highlight-soft_100_eae6ea_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/eggplant/images/ui-bg_highlight-soft_25_30273a_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/eggplant/images/ui-bg_highlight-soft_45_5f5964_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/eggplant/images/ui-icons_454545_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/eggplant/images/ui-icons_734d99_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/eggplant/images/ui-icons_8d78a5_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/eggplant/images/ui-icons_a8a3ae_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/eggplant/images/ui-icons_ebccce_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/eggplant/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/eggplant/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/eggplant/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/eggplant/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/excite-bike/images/ui-bg_diagonals-small_25_c5ddfc_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/excite-bike/images/ui-bg_diagonals-thick_20_e69700_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/excite-bike/images/ui-bg_diagonals-thick_22_1484e6_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/excite-bike/images/ui-bg_diagonals-thick_26_2293f7_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/excite-bike/images/ui-bg_highlight-soft_100_f9f9f9_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/excite-bike/images/ui-bg_inset-hard_100_eeeeee_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/excite-bike/images/ui-icons_0a82eb_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/excite-bike/images/ui-icons_0b54d5_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/excite-bike/images/ui-icons_5fa5e3_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/excite-bike/images/ui-icons_fcdd4a_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/excite-bike/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/excite-bike/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/excite-bike/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/excite-bike/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/flick/images/ui-bg_glass_65_ffffff_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/flick/images/ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/flick/images/ui-bg_highlight-soft_25_0073ea_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/flick/images/ui-bg_highlight-soft_50_dddddd_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/flick/images/ui-icons_0073ea_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/flick/images/ui-icons_454545_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/flick/images/ui-icons_666666_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/flick/images/ui-icons_ff0084_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/flick/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/flick/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/flick/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/flick/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/hot-sneaks/images/ui-bg_diagonals-small_40_db4865_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/hot-sneaks/images/ui-bg_diagonals-small_50_93c3cd_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/hot-sneaks/images/ui-bg_diagonals-small_50_ff3853_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/hot-sneaks/images/ui-bg_diagonals-small_75_ccd232_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/hot-sneaks/images/ui-bg_dots-medium_80_ffff38_4x4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/hot-sneaks/images/ui-bg_dots-small_35_35414f_2x2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/hot-sneaks/images/ui-bg_white-lines_85_f7f7ba_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/hot-sneaks/images/ui-icons_454545_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/hot-sneaks/images/ui-icons_88a206_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/hot-sneaks/images/ui-icons_c02669_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/hot-sneaks/images/ui-icons_e1e463_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/hot-sneaks/images/ui-icons_ffeb33_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/hot-sneaks/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/hot-sneaks/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/hot-sneaks/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/hot-sneaks/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/humanity/images/ui-bg_glass_100_f5f0e5_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/humanity/images/ui-bg_glass_25_cb842e_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/humanity/images/ui-bg_glass_70_ede4d4_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/humanity/images/ui-bg_highlight-hard_100_f4f0ec_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/humanity/images/ui-bg_highlight-hard_65_fee4bd_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/humanity/images/ui-bg_highlight-hard_75_f5f5b5_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/humanity/images/ui-bg_inset-soft_100_f4f0ec_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/humanity/images/ui-icons_c47a23_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/humanity/images/ui-icons_cb672b_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/humanity/images/ui-icons_f08000_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/humanity/images/ui-icons_f35f07_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/humanity/images/ui-icons_ff7519_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/humanity/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/humanity/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/humanity/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/humanity/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/le-frog/images/ui-bg_diagonals-small_0_aaaaaa_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/le-frog/images/ui-bg_diagonals-thick_15_444444_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/le-frog/images/ui-bg_diagonals-thick_95_ffdc2e_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/le-frog/images/ui-bg_glass_55_fbf5d0_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/le-frog/images/ui-bg_highlight-hard_30_285c00_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/le-frog/images/ui-bg_highlight-soft_33_3a8104_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/le-frog/images/ui-bg_highlight-soft_50_4eb305_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/le-frog/images/ui-bg_highlight-soft_60_4ca20b_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/le-frog/images/ui-bg_inset-soft_10_285c00_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/le-frog/images/ui-icons_4eb305_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/le-frog/images/ui-icons_72b42d_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/le-frog/images/ui-icons_cd0a0a_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/le-frog/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/le-frog/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/le-frog/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/le-frog/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/mint-choc/images/ui-bg_glass_15_5f391b_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/mint-choc/images/ui-bg_gloss-wave_20_1c160d_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/mint-choc/images/ui-bg_gloss-wave_25_453326_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/mint-choc/images/ui-bg_gloss-wave_30_44372c_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/mint-choc/images/ui-bg_highlight-soft_20_201913_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/mint-choc/images/ui-bg_highlight-soft_20_619226_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/mint-choc/images/ui-bg_inset-soft_10_201913_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/mint-choc/images/ui-icons_222222_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/mint-choc/images/ui-icons_9bcc60_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/mint-choc/images/ui-icons_add978_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/mint-choc/images/ui-icons_e3ddc9_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/mint-choc/images/ui-icons_f1fd86_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/mint-choc/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/mint-choc/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/mint-choc/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/mint-choc/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/overcast/images/ui-bg_glass_100_f8f8f8_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/overcast/images/ui-bg_glass_35_dddddd_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/overcast/images/ui-bg_glass_60_eeeeee_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/overcast/images/ui-bg_inset-hard_75_999999_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/overcast/images/ui-bg_inset-soft_50_c9c9c9_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/overcast/images/ui-icons_3383bb_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/overcast/images/ui-icons_454545_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/overcast/images/ui-icons_70b2e1_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/overcast/images/ui-icons_999999_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/overcast/images/ui-icons_fbc856_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/overcast/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/overcast/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/overcast/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/images/ui-bg_diagonal-maze_20_6e4f1c_10x10.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/images/ui-bg_diagonal-maze_40_000000_10x10.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/images/ui-bg_fine-grain_10_eceadf_60x60.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/images/ui-bg_fine-grain_10_f8f7f6_60x60.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/images/ui-bg_fine-grain_15_eceadf_60x60.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/images/ui-bg_fine-grain_15_f7f3de_60x60.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/images/ui-bg_fine-grain_15_ffffff_60x60.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/images/ui-bg_fine-grain_65_654b24_60x60.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/images/ui-bg_fine-grain_68_b83400_60x60.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/images/ui-icons_222222_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/images/ui-icons_3572ac_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/images/ui-icons_8c291d_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/images/ui-icons_b83400_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/images/ui-icons_fbdb93_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/pepper-grinder/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/redmond/images/ui-bg_glass_75_d0e5f5_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/redmond/images/ui-bg_glass_85_dfeffc_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/redmond/images/ui-bg_glass_95_fef1ec_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/redmond/images/ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/redmond/images/ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/redmond/images/ui-icons_217bc0_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/redmond/images/ui-icons_2e83ff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/redmond/images/ui-icons_469bdd_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/redmond/images/ui-icons_6da8d5_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/redmond/images/ui-icons_cd0a0a_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/redmond/images/ui-icons_d8e7f3_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/redmond/images/ui-icons_f9bd01_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/redmond/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/redmond/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/redmond/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/smoothness/images/ui-bg_glass_65_ffffff_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/smoothness/images/ui-bg_glass_75_dadada_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/smoothness/images/ui-icons_222222_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/smoothness/images/ui-icons_2e83ff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/smoothness/images/ui-icons_454545_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/smoothness/images/ui-icons_888888_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/smoothness/images/ui-icons_cd0a0a_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/smoothness/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/smoothness/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/smoothness/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/images/ui-bg_glass_55_fcf0ba_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/images/ui-bg_gloss-wave_100_ece8da_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/images/ui-bg_highlight-hard_100_f5f3e5_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/images/ui-bg_highlight-hard_100_fafaf4_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/images/ui-bg_highlight-hard_15_459e00_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/images/ui-bg_highlight-hard_95_cccccc_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/images/ui-bg_highlight-soft_25_67b021_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/images/ui-bg_highlight-soft_95_ffedad_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/images/ui-bg_inset-soft_15_2b2922_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/images/ui-icons_808080_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/images/ui-icons_847e71_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/images/ui-icons_8DC262_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/images/ui-icons_cd0a0a_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/images/ui-icons_eeeeee_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/south-street/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/start/images/ui-bg_glass_45_0078ae_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/start/images/ui-bg_glass_55_f8da4e_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/start/images/ui-bg_glass_75_79c9ec_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/start/images/ui-bg_gloss-wave_45_e14f1c_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/start/images/ui-bg_gloss-wave_50_6eac2c_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/start/images/ui-bg_gloss-wave_75_2191c0_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/start/images/ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/start/images/ui-icons_0078ae_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/start/images/ui-icons_056b93_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/start/images/ui-icons_d8e7f3_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/start/images/ui-icons_e0fdff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/start/images/ui-icons_f5e175_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/start/images/ui-icons_f7a50d_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/start/images/ui-icons_fcd113_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/start/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/start/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/start/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/sunny/images/ui-bg_diagonals-medium_20_d34d17_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/sunny/images/ui-bg_gloss-wave_45_817865_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/sunny/images/ui-bg_gloss-wave_60_fece2f_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/sunny/images/ui-bg_gloss-wave_70_ffdd57_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/sunny/images/ui-bg_gloss-wave_90_fff9e5_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/sunny/images/ui-bg_highlight-soft_100_feeebd_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/sunny/images/ui-bg_inset-soft_30_ffffff_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/sunny/images/ui-icons_3d3d3d_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/sunny/images/ui-icons_bd7b00_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/sunny/images/ui-icons_d19405_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/sunny/images/ui-icons_eb990f_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/sunny/images/ui-icons_ed9f26_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/sunny/images/ui-icons_fadc7a_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/sunny/images/ui-icons_ffe180_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/sunny/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/sunny/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/sunny/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/swanky-purse/images/ui-bg_diamond_10_4f4221_10x8.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/swanky-purse/images/ui-bg_diamond_20_372806_10x8.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/swanky-purse/images/ui-bg_diamond_25_675423_10x8.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/swanky-purse/images/ui-bg_diamond_25_d5ac5d_10x8.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/swanky-purse/images/ui-bg_diamond_8_261803_10x8.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/swanky-purse/images/ui-bg_diamond_8_443113_10x8.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/swanky-purse/images/ui-bg_highlight-hard_65_fee4bd_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/swanky-purse/images/ui-icons_070603_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/swanky-purse/images/ui-icons_e8e2b5_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/swanky-purse/images/ui-icons_e9cd86_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/swanky-purse/images/ui-icons_efec9f_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/swanky-purse/images/ui-icons_f2ec64_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/swanky-purse/images/ui-icons_f9f2bd_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/swanky-purse/images/ui-icons_ff7519_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/swanky-purse/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/swanky-purse/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/swanky-purse/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/trontastic/images/ui-bg_diagonals-small_50_262626_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/trontastic/images/ui-bg_glass_40_0a0a0a_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/trontastic/images/ui-bg_glass_55_f1fbe5_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/trontastic/images/ui-bg_glass_60_000000_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/trontastic/images/ui-bg_gloss-wave_55_000000_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/trontastic/images/ui-bg_gloss-wave_85_9fda58_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/trontastic/images/ui-bg_gloss-wave_95_f6ecd5_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/trontastic/images/ui-icons_000000_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/trontastic/images/ui-icons_1f1f1f_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/trontastic/images/ui-icons_9fda58_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/trontastic/images/ui-icons_b8ec79_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/trontastic/images/ui-icons_cd0a0a_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/trontastic/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/trontastic/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/trontastic/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/trontastic/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-darkness/images/ui-bg_glass_20_555555_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-darkness/images/ui-bg_glass_40_0078a3_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-darkness/images/ui-bg_glass_40_ffc73d_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-darkness/images/ui-bg_gloss-wave_25_333333_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-darkness/images/ui-bg_highlight-soft_80_eeeeee_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-darkness/images/ui-bg_inset-soft_25_000000_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-darkness/images/ui-bg_inset-soft_30_f58400_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-darkness/images/ui-icons_222222_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-darkness/images/ui-icons_4b8e0b_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-darkness/images/ui-icons_a83300_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-darkness/images/ui-icons_cccccc_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-darkness/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-darkness/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-darkness/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-darkness/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-lightness/images/ui-icons_222222_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-lightness/images/ui-icons_228ef1_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-lightness/images/ui-icons_ef8c08_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-lightness/images/ui-icons_ffd27a_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-lightness/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-lightness/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-lightness/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/ui-lightness/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/vader/images/ui-bg_glass_95_fef1ec_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/vader/images/ui-bg_gloss-wave_16_121212_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/vader/images/ui-bg_highlight-hard_15_888888_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/vader/images/ui-bg_highlight-hard_55_555555_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/vader/images/ui-bg_highlight-soft_35_adadad_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/vader/images/ui-bg_highlight-soft_60_dddddd_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/vader/images/ui-bg_inset-soft_15_121212_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/vader/images/ui-icons_666666_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/vader/images/ui-icons_aaaaaa_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/vader/images/ui-icons_bbbbbb_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/vader/images/ui-icons_c98000_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/vader/images/ui-icons_cccccc_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/vader/images/ui-icons_cd0a0a_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/vader/images/ui-icons_f29a00_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/vader/jquery-ui.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/vader/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-ui/1.12.1/themes/vader/theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-validate/1.15.0/additional-methods.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-validate/1.15.0/additional-methods.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-validate/1.15.0/jquery.validate.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery-validate/1.15.0/jquery.validate.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery/1.4.1/jquery-migrate.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery/1.4.1/jquery-migrate.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery/3.1.1/jquery.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery/3.1.1/jquery.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery/3.1.1/jquery.min.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery/3.2.1/jquery.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery/3.2.1/jquery.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/jquery/3.2.1/jquery.min.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/respond/1.4.2/respond.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/libraries/w3school/w3.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/LICENSE.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/configurator.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/font/popoto/popoto.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/font/popoto/popoto.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/font/popoto/popoto.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/font/popoto/popoto.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/hljs/default.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/hljs/hybrid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/image/node-black.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/image/node-blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/image/node-gray.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/image/node-green.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/image/node-light-blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/image/node-orange.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/image/node-yellow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/image/popoto-small-g.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/image/popoto-small.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/jquery/images/ui-bg_flat_20_525863_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/jquery/images/ui-bg_flat_25_22252a_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/jquery/images/ui-bg_flat_25_444951_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/jquery/images/ui-bg_flat_30_8bb71a_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/jquery/images/ui-bg_flat_30_cccccc_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/jquery/images/ui-bg_flat_40_2aa1d3_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/jquery/images/ui-bg_flat_40_ffc73d_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/jquery/images/ui-bg_flat_50_5c5c5c_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/jquery/images/ui-bg_flat_80_eeeeee_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/jquery/images/ui-icons_222222_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/jquery/images/ui-icons_4b8e0b_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/jquery/images/ui-icons_a83300_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/jquery/images/ui-icons_cccccc_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/jquery/images/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/jquery/jquery-ui.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/jquery/jquery-ui.structure.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/jquery/jquery-ui.theme.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/css/popoto.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/image/ajax-loader.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/image/configurator.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/image/graph.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/image/image.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/image/svg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/image/text.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/js/LICENSES.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/js/analytics.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/js/d3.v3.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/js/highlight.pack.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/js/jquery-2.1.0.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/js/jquery-ui.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/js/popoto.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/js/popoto.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/readme.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/release-note.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/src/css/popotojs-svg.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/src/css/popotojs.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/popoto/src/js/popoto.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/stylesheets/default-nomenu.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/stylesheets/default.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/public/stylesheets/popoto.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/routes/admin_user.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/routes/api/account/check.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/routes/api/account/getByEmail.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/routes/api/account/getBySession.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/routes/api/account/recover.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/routes/api/account/setPassword.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/routes/logout.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/routes/recover.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/routes/reset.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/utils/password.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/nodejs/utils/sendMail.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/nodejs/app.js" afterPath="$PROJECT_DIR$/src/nodejs/app.js" />
-      <change beforePath="$PROJECT_DIR$/src/nodejs/models/api/account/delete.js" afterPath="$PROJECT_DIR$/src/nodejs/models/api/account/delete.js" />
-      <change beforePath="$PROJECT_DIR$/src/nodejs/models/api/account/get.js" afterPath="$PROJECT_DIR$/src/nodejs/models/api/account/get.js" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/config/server.js" afterPath="$PROJECT_DIR$/src/nodejs/config/server.js" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/config/smtp.js" afterPath="$PROJECT_DIR$/src/nodejs/config/smtp.js" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/models/api/account/converter.js" afterPath="$PROJECT_DIR$/src/nodejs/models/api/account/converter.js" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/models/api/account/keygen.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/nodejs/models/api/account/patch.js" afterPath="$PROJECT_DIR$/src/nodejs/models/api/account/patch.js" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/models/api/account/prepare.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/models/api/account/read.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/nodejs/models/api/account/set.js" afterPath="$PROJECT_DIR$/src/nodejs/models/api/account/set.js" />
-      <change beforePath="$PROJECT_DIR$/src/nodejs/models/api/device/converter.js" afterPath="$PROJECT_DIR$/src/nodejs/models/api/device/converter.js" />
-      <change beforePath="$PROJECT_DIR$/src/nodejs/models/api/device/delete.js" afterPath="$PROJECT_DIR$/src/nodejs/models/api/device/delete.js" />
-      <change beforePath="$PROJECT_DIR$/src/nodejs/models/api/device/patch.js" afterPath="$PROJECT_DIR$/src/nodejs/models/api/device/patch.js" />
-      <change beforePath="$PROJECT_DIR$/src/nodejs/models/api/device/set.js" afterPath="$PROJECT_DIR$/src/nodejs/models/api/device/set.js" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/models/api/users/getBySession.js" afterPath="$PROJECT_DIR$/src/nodejs/models/api/users/getBySession.js" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/models/api/users/init.js" afterPath="$PROJECT_DIR$/src/nodejs/models/api/users/init.js" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/models/mongodbfind.js" afterPath="$PROJECT_DIR$/src/nodejs/models/mongodbfind.js" />
       <change beforePath="$PROJECT_DIR$/src/nodejs/package.json" afterPath="$PROJECT_DIR$/src/nodejs/package.json" />
-      <change beforePath="$PROJECT_DIR$/src/nodejs/routes/api/account/delete.js" afterPath="$PROJECT_DIR$/src/nodejs/routes/api/account/delete.js" />
       <change beforePath="$PROJECT_DIR$/src/nodejs/routes/api/account/get.js" afterPath="$PROJECT_DIR$/src/nodejs/routes/api/account/get.js" />
-      <change beforePath="$PROJECT_DIR$/src/nodejs/routes/api/account/patch.js" afterPath="$PROJECT_DIR$/src/nodejs/routes/api/account/patch.js" />
-      <change beforePath="$PROJECT_DIR$/src/nodejs/routes/api/account/post.js" afterPath="$PROJECT_DIR$/src/nodejs/routes/api/account/post.js" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/routes/index.js" afterPath="$PROJECT_DIR$/src/nodejs/routes/index.js" />
       <change beforePath="$PROJECT_DIR$/src/nodejs/routes/main.js" afterPath="$PROJECT_DIR$/src/nodejs/routes/main.js" />
-      <change beforePath="$PROJECT_DIR$/src/nodejs/views/error.ejs" afterPath="$PROJECT_DIR$/src/nodejs/views/error.ejs" />
-      <change beforePath="$PROJECT_DIR$/src/nodejs/views/index.ejs" afterPath="$PROJECT_DIR$/src/nodejs/views/index.ejs" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/utils/getconfig.js" afterPath="$PROJECT_DIR$/src/nodejs/utils/getconfig.js" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/views/identity/recover/scripts.ejs" afterPath="$PROJECT_DIR$/src/nodejs/views/identity/recover/scripts.ejs" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/views/identity/reset/scripts.ejs" afterPath="$PROJECT_DIR$/src/nodejs/views/identity/reset/scripts.ejs" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/views/identity/signin/scripts.ejs" afterPath="$PROJECT_DIR$/src/nodejs/views/identity/signin/scripts.ejs" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/views/include/footer.ejs" afterPath="$PROJECT_DIR$/src/nodejs/views/include/footer.ejs" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/views/include/head-nomenu.ejs" afterPath="$PROJECT_DIR$/src/nodejs/views/include/head-nomenu.ejs" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/views/include/head.ejs" afterPath="$PROJECT_DIR$/src/nodejs/views/include/head.ejs" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/views/include/topmenu.ejs" afterPath="$PROJECT_DIR$/src/nodejs/views/include/topmenu.ejs" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/views/reports/index.html" afterPath="$PROJECT_DIR$/src/nodejs/views/index/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/nodejs/views/reports/scripts.ejs" afterPath="$PROJECT_DIR$/src/nodejs/views/index/scripts.ejs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,6 +734,25 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/nodejs/routes/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="731">
+              <caret line="43" column="61" lean-forward="false" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>user</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -76,8 +762,65 @@
       <projects_view />
     </option>
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/nodejs/models/api/users/getByEmail.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/routes/api/users/getByEmail.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/routes/api/account/get.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/views/include/head.ejs" />
+        <option value="$PROJECT_DIR$/src/nodejs/views/include/head-nomenu.ejs" />
+        <option value="$PROJECT_DIR$/src/nodejs/views/include/topmenu.ejs" />
+        <option value="$PROJECT_DIR$/src/nodejs/models/api/users/check.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/app.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/models/mongodbfind.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/models/api/account/getByEmail.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/models/api/account/setCurrent.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/models/api/account/cleanSession.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/routes/api/account/getBySession.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/routes/api/account/getByEmail.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/views/identity/signin/scripts.ejs" />
+        <option value="$PROJECT_DIR$/src/nodejs/models/api/account/patch.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/models/api/account/setSession.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/routes/api/account/check.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/models/api/account/getByEmailPassword.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/models/api/account/check.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/routes/index.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/models/api/users/getBySession.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/views/index/index.html" />
+        <option value="$PROJECT_DIR$/src/nodejs/views/include/footer.ejs" />
+        <option value="$PROJECT_DIR$/src/nodejs/utils/getconfig.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/routes/logout.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/routes/recover.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/views/identity/recover/scripts.ejs" />
+        <option value="$PROJECT_DIR$/src/nodejs/models/api/account/createPassword.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/utils/password.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/package.json" />
+        <option value="$PROJECT_DIR$/src/nodejs/config/smtp.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/utils/sendMail.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/config/server.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/models/api/account/set.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/models/api/account/getBySession.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/models/api/account/getByToken.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/routes/api/account/recover.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/models/api/account/setToken.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/models/api/account/converter.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/models/api/account/setPassword.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/views/identity/reset/scripts.ejs" />
+        <option value="$PROJECT_DIR$/src/nodejs/routes/main.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/routes/api/account/setPassword.js" />
+        <option value="$PROJECT_DIR$/src/nodejs/routes/reset.js" />
+      </list>
+    </option>
+  </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
@@ -92,6 +835,9 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/src/nodejs/node_modules" />
   </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
@@ -103,6 +849,9 @@
     <entry key="Project Default">
       <profile-state />
     </entry>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -119,8 +868,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -140,22 +887,116 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="nodejs" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="IOTDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IOTDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="nodejs" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IOTDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IOTDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="nodejs" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IOTDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IOTDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="nodejs" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IOTDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IOTDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="nodejs" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="account" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IOTDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IOTDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="nodejs" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IOTDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IOTDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="nodejs" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IOTDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IOTDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="nodejs" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IOTDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IOTDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="nodejs" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="account" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IOTDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IOTDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="nodejs" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IOTDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IOTDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="nodejs" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/nodejs/app.js" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bede6362\IdeaProjects\Perso\IOTDB\src\nodejs\utils" />
+      <recent name="C:\Users\bede6362\IdeaProjects\Perso\IOTDB\src\nodejs\models\api\account" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bede6362\IdeaProjects\Perso\IOTDB\src\nodejs\models\api\account" />
+      <recent name="C:\Users\bede6362\IdeaProjects\Perso\IOTDB\src\nodejs\routes\api\account" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -210,6 +1051,7 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration name="IOTDB run" type="NodeJSConfigurationType" factoryName="Node.js" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/src/nodejs" />
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -265,48 +1107,52 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1520615252836</updated>
-      <workItem from="1520615256074" duration="112000" />
+      <workItem from="1520615256074" duration="284000" />
+      <workItem from="1520843530288" duration="599000" />
+      <workItem from="1520855590383" duration="11890000" />
+      <workItem from="1520928720756" duration="20261000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112000" />
+    <option name="totallyTimeSpent" value="33034000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="3456" height="1416" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Graph Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Graph Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921085" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Graph Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11837456" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Graph Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32943013" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,6 +1170,409 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/nodejs/routes/api/users/check.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/users/check.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/routes/api/users/getByEmail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/routes/api/users/getBySession.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/routes/api/account/get.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="45" lean-forward="false" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/users/setSession.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/device/patch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/account/get.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <marker date="1520609769093" expanded="true" signature="924:957" ph="{...}" />
+            <marker date="1520609769093" expanded="true" signature="1271:1374" ph="{...}" />
+            <marker date="1520609769093" expanded="true" signature="1783:1818" ph="{...}" />
+            <marker date="1520609769093" expanded="true" signature="2401:2424" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/account/setCurrent.js" />
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/account/cleanSession.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/routes/api/account/getByEmail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/views/identity/signin/scripts.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/routes/api/account/getBySession.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/account/patch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/account/getByEmailPassword.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/account/check.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/routes/api/account/check.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/views/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/views/index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/views/index/scripts.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/users/getBySession.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="40" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/views/include/footer.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/utils/getconfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="95" lean-forward="false" selection-start-line="27" selection-start-column="95" selection-end-line="27" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/routes/logout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/views/identity/recover/scripts.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/utils/password.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="33" lean-forward="false" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/config/smtp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/config/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/utils/sendMail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="54" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/account/getBySession.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/routes/recover.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/generator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/users/getByToken.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/routes/api/users/recover.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/routes/api/account/recover.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/account/getByToken.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="60" lean-forward="false" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/account/set.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/account/setToken.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="58" column="9" lean-forward="false" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/account/converter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="97" column="46" lean-forward="false" selection-start-line="97" selection-start-column="46" selection-end-line="97" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/account/setSession.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/users/getByEmail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/views/identity/reset/scripts.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/account/getByEmail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/models/api/account/setPassword.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="49" column="20" lean-forward="false" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/views/identity/reset/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/routes/api/account/setPassword.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="25" column="42" lean-forward="true" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/routes/reset.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="30" column="45" lean-forward="false" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nodejs/routes/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="61" lean-forward="false" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>

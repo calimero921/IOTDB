@@ -1,4 +1,4 @@
-const Log4n = require('../utils/log4n');
+const Log4n = require('../utils/log4n.js');
 const getConfig = require('../utils/getconfig.js');
 
 module.exports = function (req, res) {

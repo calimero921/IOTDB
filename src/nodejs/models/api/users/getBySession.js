@@ -1,8 +1,3 @@
-/**
- * Created by bede6362 on 19/06/2017.
- */
-'use strict';
-
 const Log4n = require('../../../utils/log4n.js');
 const mysqlClient = require('../../mysqlclient.js');
 const transUser = require('./trans.js');

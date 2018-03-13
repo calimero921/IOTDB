@@ -1,26 +1,21 @@
-/**
- * Created by bede6362 on 06/06/2017.
- */
-
-"use strict";
-
+const moment = require('moment');
 const Log4n = require('./log4n');
-const getUsersBySession = require('../models/api/users/getBySession');
+const getUsersBySession = require('../models/api/account/getBySession');
 
 module.exports = function (req, res, admin) {
     const log4n = new Log4n('/utils/getconfig');
     if(typeof admin === 'undefined') admin = false;
 
-    var config = {};
+    let config = {};
 
     return new Promise((resolve, reject) => {
-        var session = req.session;
-        if (typeof session === 'undefined') {
+        let session_id = req.sessionID;
+        if (typeof session_id === 'undefined') {
             log4n.debug("No session available");
             reject('401 Unauthorized');
         } else {
-            log4n.debug("Session:" + session.id);
-            getUsersBySession(session.id)
+            log4n.debug("Session:" + session_id);
+            getUsersBySession(session_id)
                 .then(result => {
                     // log4n.object(result, 'result');
                     if (result.length > 0) {
@@ -29,6 +24,8 @@ module.exports = function (req, res, admin) {
                             log4n.debug("User haven't sufficient right to access this page");
                             reject('403 Forbidden');
                         } else {
+                            let last = new moment(config.user.last_connexion_date);
+                            config.user.last_connexion_date = last.format('DD/MMM/YYYY HH:mm:SS');
                             resolve(config);
                         }
                     } else {

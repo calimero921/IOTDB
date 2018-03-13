@@ -15,6 +15,7 @@ module.exports = function (collection, query, parameter, overtake) {
         connexion()
             .then(() => {
                 try {
+                    //initialisation des parametres offset et limit
                     let offset = 0;
                     let limit = 0;
                     if (typeof parameter !== 'undefined') {
@@ -29,7 +30,7 @@ module.exports = function (collection, query, parameter, overtake) {
                         .then(datas => {
                             // console.log('datas: ', datas);
                             if (typeof datas === 'undefined') {
-                                reject(errorparsing({code: 500}));
+                                reject(errorparsing({error_code: 500}));
                                 log4n.debug('done - no data')
                             } else {
                                 let result = [];
@@ -45,7 +46,7 @@ module.exports = function (collection, query, parameter, overtake) {
                                         resolve(result);
                                         log4n.debug('done - no result but ok')
                                     } else {
-                                        reject(errorparsing({code: 404}));
+                                        reject(errorparsing({error_code: 404}));
                                         log4n.debug('done - not found')
                                     }
                                 }
@@ -55,7 +56,7 @@ module.exports = function (collection, query, parameter, overtake) {
                             log4n.object(error, 'error');
                             reject(errorparsing(error));
                             global.mongodbConnexion = null;
-                            log4n.debug('done - call catch')
+                            log4n.debug('done - promise catch')
                         });
                 } catch (error) {
                     console.log('error:', error);
@@ -66,7 +67,7 @@ module.exports = function (collection, query, parameter, overtake) {
             .catch((error) => {
                 log4n.object(error, 'error');
                 reject(errorparsing(error));
-                log4n.debug('done - global catch')
+                log4n.debug('done - connexion catch')
             });
     });
 };

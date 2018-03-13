@@ -5,14 +5,14 @@ const fs = require('fs');
 const https = require('https');
 const path = require('path');
 const express = require('express');
-// const session = require('express-session');
+const session = require('express-session');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-// const MongoDBStore = require('connect-mongodb-session')(session);
+// const cookieParser = require('cookie-parser');
+const MongoDBStore = require('connect-mongodb-session')(session);
 const logger = require('morgan');
 
 const config = require('./config/server.js');
-// const mongodbconf = require('./config/mongodb.js');
+const mongodbconf = require('./config/mongodb.js');
 const Log4n = require('./utils/log4n.js');
 const MQTTEngine = require('./routes/MQTTEngine.js');
 
@@ -28,32 +28,34 @@ global.mqttConnexion.start();
 log4n.debug('Create server');
 let app = express();
 
-// log4n.debug('Session store setup');
-// let store = new MongoDBStore(
-//     {
-//         uri: mongodbconf.url,
-//         databaseName: mongodbconf.dbName,
-//         collection: 'sessions'
-//     });
-// // Catch errors
-// store.on('error', function (error) {
-//     assert.ifError(error);
-//     assert.ok(false);
-// });
+log4n.debug('Session store setup');
+let store = new MongoDBStore(
+    {
+        uri: mongodbconf.url,
+        databaseName: mongodbconf.dbName,
+        collection: 'session'
+    });
+// Catch errors
+store.on('error', function (error) {
+    assert.ifError(error);
+    assert.ok(false);
+});
 
-// log4n.debug('Session manager setup');
-// app.use(require('express-session')({
-//     secret: 'IOTDBsecrettoprotectsessiondata',
-//     cookie: {
-//         maxAge: 1000 * 60 * 60 * 24 * 7 // 1 week
-//     },
-//     store: store,
-//     // Boilerplate options, see:
-//     // * https://www.npmjs.com/package/express-session#resave
-//     // * https://www.npmjs.com/package/express-session#saveuninitialized
-//     resave: true,
-//     saveUninitialized: true
-// }));
+log4n.debug('Session manager setup');
+app.use(require('express-session')({
+    secret: 'IOTDBsecrettoprotectsessiondata',
+    cookie: {
+        httpOnly: true,
+        maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
+        secure: true
+    },
+    store: store,
+    // Boilerplate options, see:
+    // * https://www.npmjs.com/package/express-session#resave
+    // * https://www.npmjs.com/package/express-session#saveuninitialized
+    resave: true,
+    saveUninitialized: true
+}));
 
 log4n.debug("Express server setup");
 app.set('trust proxy', 1);
@@ -65,11 +67,12 @@ app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
 
 log4n.debug("Parser setup");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(cookieParser());
+// app.use(cookieParser());
 
 /**
  * Get port from environment and store in Express.

@@ -5,8 +5,8 @@ const Converter = require('./converter.js');
 
 module.exports = function (account_id, new_account) {
     const log4n = new Log4n('/models/api/account/patch');
-    // log4n.object(account_id,'account_id');
-    // log4n.object(new_account,'new_account');
+    log4n.object(account_id,'account_id');
+    log4n.object(new_account,'new_account');
 
     //traitement de recherche dans la base
     return new Promise(function (resolve, reject) {

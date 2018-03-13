@@ -11,7 +11,7 @@ module.exports = function (req, res) {
     if (typeof id === 'undefined') {
         //aucun id
         responseError({error_code: 400}, res, log4n);
-        log4n.debug('done - missing parameter(device_id)');
+        log4n.debug('done - missing parameter');
     } else {
         //traitement de recherche dans la base
         var query = {id:id};

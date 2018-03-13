@@ -8,7 +8,7 @@
         var password = $("#pwd").prop("value");
         var login = $("#lemail").prop("value");
 
-        $.getJSON('/v1/user/check/' + login + '/' + password,
+        $.getJSON('/v1/account/check/' + login + '/' + password,
             function(data) {
                 if(typeof data === 'undefined') {
                     displayResult(false, "", "error while verifying your credentials");

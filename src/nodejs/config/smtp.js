@@ -1,17 +1,11 @@
-/**
- * http://usejsdoc.org/
- */
-
-/* jslint node: true */
-/* jslint esversion: 6 */
-/* jshint -W117 */
-
-'use strict';
-
 module.exports = {
     transport: {
-        host: "localhost",
+        host: 'localhost',
         port: 587,
-        secure: false
+        secure: false,
+        auth: {
+            user: 'iotdb@localhost',
+            pass: 'password'
+        }
     }
 };

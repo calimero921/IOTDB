@@ -30,7 +30,7 @@
                 data.email = pathArray[2];
                 data.token = $("#token").val();
 
-                var jqxhr = $.post('/v1/user/password', JSON.stringify(data))
+                var jqxhr = $.post('/v1/account/password', JSON.stringify(data))
                     .done(function(datas) {resolve(datas)})
                     .fail(function(error) {reject(error)});
             } catch (err) {
