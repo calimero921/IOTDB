@@ -16,14 +16,9 @@ module.exports = function (email) {
             let query = {email: email};
             accountGet(query, 0, 0)
                 .then(datas => {
-                    if (typeof datas === 'undefined') {
-                        reject(errorparsing({error_code: 404}));
-                        log4n.debug('done - not found');
-                    } else {
-                        // log4n.object(datas, 'datas');
-                        resolve(datas);
-                        log4n.debug('done - ok');
-                    }
+                    // log4n.object(datas, 'datas');
+                    resolve(datas);
+                    log4n.debug('done - ok');
                 })
                 .catch(error => {
                     reject(errorparsing(error));

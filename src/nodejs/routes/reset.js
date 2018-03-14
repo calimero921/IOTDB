@@ -9,8 +9,7 @@ module.exports = function (req, res) {
     log4n.object(req.params.email, 'email');
     log4n.object(req.params.token, 'token');
 
-    let config = {};
-    config.title = 'Error';
+    let config = {title: 'Error'};
     accountGetByToken(req.params.email, req.params.token)
         .then(datas => {
             if(data.length > 0) {
@@ -18,7 +17,7 @@ module.exports = function (req, res) {
                 config.person = datas[0];
                 return accountSetToken(datas[0].email);
             }
-            return errorparsing({error_code: 404, error_message: 'not found});
+            return errorparsing({error_code: 404, error_message: 'not found'});
         })
         .then(data => {
             log4n.object(data, 'result');

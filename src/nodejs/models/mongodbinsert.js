@@ -1,6 +1,7 @@
 const Log4n = require('../utils/log4n.js');
 const errorparsing = require('../utils/errorparsing.js');
 const connexion = require('./mongoconnexion.js');
+const mongoerror = require('./mongodberror.js');
 
 module.exports = function (collection, query) {
     const log4n = new Log4n('/models/mongodbinsert');
@@ -34,20 +35,20 @@ module.exports = function (collection, query) {
                             }
                         })
                         .catch((error) => {
-                            log4n.object(error, 'error');
-                            resolve(errorparsing(error));
+                            // log4n.object(error, 'error');
+                            reject(mongoerror(error));
 	                        global.mongodbConnexion = null;
-                            log4n.debug('done - call catch')
+                            log4n.debug('done - mongo catch')
                         });
                 } catch (error) {
                     console.log('error:', error);
-                    resolve(errorparsing(error));
+                    reject(errorparsing(error));
                     log4n.debug('done - try catch')
                 }
             })
             .catch((error) => {
                 log4n.object(error, 'error');
-                resolve(errorparsing(error));
+                reject(errorparsing(error));
                 log4n.debug('done - global catch')
             });
     });

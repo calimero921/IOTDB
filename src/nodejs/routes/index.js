@@ -4,8 +4,7 @@ const getConfig = require('../utils/getconfig.js');
 module.exports = function (req, res) {
     const log4n = new Log4n('/routes/reports');
 
-    let config = {};
-    config.title = "error";
+    let config = {title: "Error"};
 
     try {
         getConfig(req, res, false)
@@ -13,7 +12,7 @@ module.exports = function (req, res) {
                 log4n.object(data, 'config');
                 if (typeof data === 'undefined') throw 'no config available';
                 config = data;
-                config.title = 'Reports';
+                config.title = 'Index';
 
                 log4n.object(config, 'config');
                 res.render('index/index.html', config);

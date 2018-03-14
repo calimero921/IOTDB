@@ -19,36 +19,40 @@ const devicePatch = require('./api/device/patch.js');
 
 //routage des pages
 const page_index = require('./index.js');
+const page_signon = require('./signon.js');
+const page_signin = require('./signin.js');
 const page_logout = require('./logout.js');
 const page_recover = require('./recover.js');
 const page_reset = require('./reset.js');
-// const page_admin_user = require('./admin_user.js');
+const page_admin_user = require('./admin_user.js');
 
 module.exports = function (app) {
     const log4n = new Log4n('/routes/main');
+
     // Routage des pages
-    app.get('/', checkAuth, (req, res) => {page_index(req, res)});
-    app.get('/logout', checkAuth, (req, res) => {page_logout(req, res)});
+    app.get('/signon', (req, res) => {page_signon(req, res)});
+    app.get('/signin', (req, res) => {page_signin(req, res)});
     app.get('/recover', (req, res) => {page_recover(req, res)});
     app.get('/reset/:email/:token', (req, res) => {page_reset(req, res)});
-    // app.get('/admin/user', checkAuth, function (req, res) {page_admin_user(req, res)});
+    app.get('/', checkAuth, (req, res) => {page_index(req, res)});
+    app.get('/logout', checkAuth, (req, res) => {page_logout(req, res)});
+    app.get('/admin/user', checkAuth, (req, res) => {page_admin_user(req, res)});
 
     app.get('/status', (req, res) => {res.status(200).send({'swagger_version':server.swagger, 'last_update':server.date})});
 
     // routages des API
-    app.get('/v1/account/:account_id', (req, res) => {accountGet(req, res)});
     app.get('/v1/account/check/:email/:password', (req, res) => {accountCheck(req, res)});
-    app.get('/v1/account/recover/:email', (req, res) => {accountRecover(req, res)});
+    app.get('/v1/account/:account_id', checkAuth, (req, res) => {accountGet(req, res)});
+    app.get('/v1/account/recover/:email', checkAuth, (req, res) => {accountRecover(req, res)});
     app.get('/v1/account/email/:email', checkAuth, (req, res) => {accountGetByEmail(req, res)});
-    app.post('/v1/account', checkAuth, (req, res) => {accountPost(req, res)});
-    app.post('/v1/account/password', (req, res) => {accountSetPassword(req, res);});
-    app.patch('/v1/account/:account_id', checkAuth, (req, res) => {accountPatch(req, res)});
-    app.delete('/v1/account/:account_id', checkAuth, (req, res) => {accountDelete(req, res)});
+    app.post('/v1/account', (req, res) => {accountPost(req, res)});
+    app.post('/v1/account/password', checkAuth, (req, res) => {accountSetPassword(req, res);});
+    app.delete('/v1/account/:id', checkAuth, (req, res) => {accountDelete(req, res)});
 
-    app.post('/v1/device', (req, res) => {devicePost(req, res)});
-    app.get('/v1/device/:device_id', (req, res) => {deviceGet(req, res)});
-    app.delete('/v1/device/:device_id', (req, res) => {deviceDelete(req, res)});
-    app.patch('/v1/device/:device_id', (req, res) => {devicePatch(req, res)});
+    app.post('/v1/device', checkAuth, (req, res) => {devicePost(req, res)});
+    app.get('/v1/device/:device_id', checkAuth, (req, res) => {deviceGet(req, res)});
+    app.delete('/v1/device/:device_id', checkAuth, (req, res) => {deviceDelete(req, res)});
+    app.patch('/v1/device/:device_id', checkAuth, (req, res) => {devicePatch(req, res)});
 };
 
 function checkAuth(req, res, next) {
@@ -64,7 +68,7 @@ function checkAuth(req, res, next) {
     } else {
         accountGetBySession(req.sessionID)
             .then(result => {
-                log4n.object(result, 'result');
+                // log4n.object(result, 'result');
                 if(result.length > 0) {
                     log4n.debug('session found');
                     next();

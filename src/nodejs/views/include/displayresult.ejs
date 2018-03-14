@@ -1,8 +1,9 @@
 <script type="text/javascript">
     function displayResult(done, url, error) {
+        // console.log('display error', error)
         if (done === true) {
-            if(typeof error !== 'undefined'){
-                if(error.length > 0) {
+            if (typeof error !== 'undefined') {
+                if (error.length > 0) {
                     $("#dialog-text").text(error);
                     $("#dialog-confirm").dialog({
                         title: "Confrmation",
@@ -15,7 +16,7 @@
                                 $(this).dialog("close");
                             },
                         },
-                        close: function() {
+                        close: function () {
                             redirect(url);
                         }
                     });
@@ -30,10 +31,9 @@
             if (typeof error.status === 'undefined') {
                 message = "500 " + error;
             } else {
-                if(error.status != 0) message = error.status + " " + error.message;
+                if (error.status !== 0) message = error.status + " " + error.responseText;
             }
-
-            if(message.length >0) {
+            if (message.length > 0) {
                 $("#dialog-text").text(message);
                 $("#dialog-confirm").dialog({
                     title: "Error",

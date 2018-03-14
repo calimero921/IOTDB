@@ -11,8 +11,8 @@ module.exports = function (account) {
 
     //traitement d'enregistrement dans la base
     return new Promise(function (resolve, reject) {
-        try{
-            log4n.debug('storing user');
+        try {
+            log4n.debug('storing account');
             const generator = new Generator();
             const converter = new Converter();
             if (typeof account === 'undefined') {
@@ -27,6 +27,7 @@ module.exports = function (account) {
                         query.creation_date = parseInt(moment().format('x'));
                         query.session_id = "no session";
                         query.token = generator.keygen();
+                        query.admin = false;
                         log4n.object(query, 'query');
                         return mongoClient('account', query);
                     })
@@ -41,17 +42,12 @@ module.exports = function (account) {
                     })
                     .then(datas => {
                         // log4n.object(datas, 'datas');
-                        if (typeof datas === 'undefined') {
-                            log4n.debug('done - no data');
-                            reject(errorparsing({error_code: '500'}));
+                        if (typeof datas.error_code === "undefined") {
+                            resolve(datas);
+                            log4n.debug('done - ok');
                         } else {
-                            if(typeof datas.error_code === "undefined") {
-                                resolve(datas);
-                                log4n.debug('done - ok');
-                            } else {
-                                reject(datas);
-                                log4n.debug('done - wrong data');
-                            }
+                            reject(datas);
+                            log4n.debug('done - wrong data');
                         }
                     })
                     .catch(error => {
@@ -60,7 +56,7 @@ module.exports = function (account) {
                         log4n.debug('done - promise catch')
                     });
             }
-        } catch(error) {
+        } catch (error) {
             log4n.debug('done - global catch');
             log4n.object(error, 'error');
             reject(errorparsing(error));
