@@ -1,21 +1,76 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
 <%- include('../include/head'); %>
-<body>
+<body style="background-image: url('images/iot.png'); background-color: white; background-size: 640px 360px; background-position: center; background-repeat: no-repeat">
 <%current_menu='accueil'%>
 <%-include('../include/topmenu'); %>
 
-<div class="container">
+<main class="container" role="main">
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="jumbotron hero-spacer">
+        <h1>Welcome on IOTDB</h1>
+        <p>
+            The site that helps you manage your IOT devices.
+        </p>
+    </div>
     <div class="row">
-        <!-- Main hero unit for a primary marketing message or call to action -->
         <div class="col-md-12">
-            <div class="row">
+            <h3>Lastest features</h3>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-lg-3 col-md-6 hero-feature">
+            <div class="thumbnail">
+                <img src="images/icons/small-n-flat/72/cloud.png" alt="">
+                <div class="caption"> features 1
+                </div>
+                <h3>#1</h3>
+                <p>first feature line one</p>
+                <p>line two</p>
+                <a href="#" class="btn btn-primary">Buy now!</a>
+                <a href="#" class="btn btn-primary">More info</a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 hero-feature">
+            <div class="thumbnail">
+                <img src="images/icons/small-n-flat/72/cloud.png" alt="">
+                <div class="caption"> features 2
+                </div>
+                <h3>#2</h3>
+                <p>Second feature line one</p>
+                <p>line two</p>
+                <a href="#" class="btn btn-primary">Buy now!</a>
+                <a href="#" class="btn btn-primary">More info</a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 hero-feature">
+            <div class="thumbnail">
+                <img src="images/icons/small-n-flat/72/cloud.png" alt="">
+                <div class="caption"> features 3
+                </div>
+                <h3>#3</h3>
+                <p>Third feature line one</p>
+                <p>line two</p>
+                <a href="#" class="btn btn-primary">Buy now!</a>
+                <a href="#" class="btn btn-primary">More info</a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 hero-feature">
+            <div class="thumbnail">
+                <img src="images/icons/small-n-flat/72/cloud.png" alt="">
+                <div class="caption"> features 4
+                </div>
+                <h3>#4</h3>
+                <p>Fourth feature line one</p>
+                <p>line two</p>
+                <a href="#" class="btn btn-primary">Buy now!</a>
+                <a href="#" class="btn btn-primary">More info</a>
             </div>
         </div>
     </div>
     <hr>
-    <%-include('../include/footer');%>
-</div> <!-- /container -->
+</main> <!-- /container -->
+<%-include('../include/footer');%>
 <%-include('./scripts'); %>
 </body>
 </html>

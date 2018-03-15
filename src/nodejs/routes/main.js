@@ -42,11 +42,11 @@ module.exports = function (app) {
 
     // routages des API
     app.get('/v1/account/check/:email/:password', (req, res) => {accountCheck(req, res)});
+    app.get('/v1/account/recover/:email', (req, res) => {accountRecover(req, res)});
+    app.post('/v1/account/password', (req, res) => {accountSetPassword(req, res);});
     app.get('/v1/account/:account_id', checkAuth, (req, res) => {accountGet(req, res)});
-    app.get('/v1/account/recover/:email', checkAuth, (req, res) => {accountRecover(req, res)});
     app.get('/v1/account/email/:email', checkAuth, (req, res) => {accountGetByEmail(req, res)});
     app.post('/v1/account', (req, res) => {accountPost(req, res)});
-    app.post('/v1/account/password', checkAuth, (req, res) => {accountSetPassword(req, res);});
     app.delete('/v1/account/:id', checkAuth, (req, res) => {accountDelete(req, res)});
 
     app.post('/v1/device', checkAuth, (req, res) => {devicePost(req, res)});

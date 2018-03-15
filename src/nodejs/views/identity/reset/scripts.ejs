@@ -2,14 +2,11 @@
     $(document).ready(function () {
         $('#userform').on('submit',function(ev) {
             var url = '/';
-
             promiseSetUser()
                 .then(function() {displayResult(true, url)})
                 .catch(function(err) {displayResult(false, "", err)});
-
             ev.preventDefault();
         })
-
         $('[data-toggle="tooltip"]').tooltip();
     });
 
@@ -26,7 +23,7 @@
                 var data = {};
                 data.password = pwd1;
                 var pathArray = window.location.pathname.split('/');
-                if(pathArray.length != 4) throw "wrong parameters in Urls"
+                if(pathArray.length !== 4) throw "wrong parameters in Urls"
                 data.email = pathArray[2];
                 data.token = $("#token").val();
 
@@ -38,6 +35,5 @@
             }
         });
     }
-
 </script>
 <%-include('../../include/displayresult');%>

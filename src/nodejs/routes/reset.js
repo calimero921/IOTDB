@@ -11,11 +11,11 @@ module.exports = function (req, res) {
 
     let config = {title: 'Error'};
     accountGetByToken(req.params.email, req.params.token)
-        .then(datas => {
+        .then(data => {
             if(data.length > 0) {
-                log4n.object(datas[0], 'users');
-                config.person = datas[0];
-                return accountSetToken(datas[0].email);
+                log4n.object(data[0], 'users');
+                config.person = data[0];
+                return accountSetToken(data[0].email);
             }
             return errorparsing({error_code: 404, error_message: 'not found'});
         })

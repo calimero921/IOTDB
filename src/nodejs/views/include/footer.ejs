@@ -1,6 +1,14 @@
-<footer>
-    <%if(typeof user !== 'undefined') {%>
-    <p class="pull-left">last connection : <%=user.last_connexion_date%></p>
-    <%}%>
-    <p class="pull-right">&copy; Emmanuel David <%=new Date().getFullYear()%></p>
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <% if(typeof user !== 'undefined') { %>
+                <p class="text-left">Last connection : <%= user.last_connexion_date %></p>
+                <% } %>
+            </div>
+            <div class="col-md-6">
+                <p class="text-right">Copyright &copy; Emmanuel David <%= new Date().getFullYear() %></p>
+            </div>
+        </div>
+    </div>
 </footer>

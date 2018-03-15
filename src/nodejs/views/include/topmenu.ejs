@@ -1,30 +1,35 @@
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="collapse navbar-collapse">
-        <div class="navbar-header">
-            <a class="brand navbar-brand" href="/">IOTDB</a>
-        </div>
-        <%if(typeof user !== 'undefined') {%>
-        <div class="navbar-inner">
-            <ul class="nav navbar-nav navbar-right">
-                <li <%if(current_menu == 'device') {%>class="active"<%}%>><a href="/reports">Device</a></li>
-                <%if(user.admin) {%>
-                <li id="adm-menu" class="dropdown">
-                    <a href="#" id="admin" role="button" class="dropdown-toggle" data-toggle="dropdown">Administration<b class="caret"></b></a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="admin">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/admin/user">User</a></li>
-                    </ul>
-                </li>
-                <%}%>
-                <li id="fat-menu" class="dropdown">
-                    <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">
-                        <%=user.firstname%> <%=user.lastname%> <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/logout">Déconnexion</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <%}%>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <a class="brand navbar-brand" href="/">IOTDB</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <% if (typeof user !== 'undefined') {%>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-item nav-link active" href="/device">Device</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav my-2 my-lg-0">
+            <% if(user.admin) { %>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="AdminDropdownMenu" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">Administration</a>
+                <div class="dropdown-menu" aria-labelledby="AdminDropdownMenu">
+                    <a class="dropdown-item" href="/admin/user">User</a>
+                </div>
+            </li>
+            <% } %>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="UserDropdownMenu" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false"><%= user.firstname %> <%= user.lastname %></a>
+                <div class="dropdown-menu" aria-labelledby="UserDropdownMenu">
+                    <a class="dropdown-item" href="/logout">Déconnexion</a>
+                </div>
+            </li>
+        </ul>
     </div>
-</div>
+    <% } %>
+</nav>

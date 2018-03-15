@@ -5,7 +5,7 @@
 <%current_menu='accueil'%>
 <%-include('../../include/topmenu'); %>
 
-<div class="container">
+<main class="container" role="main">
     <div class="row">
         <div class="col-md-6 col" id="list">
             <%-include('./list')%>
@@ -15,9 +15,9 @@
         </div>
     </div>
     <hr>
-    <%-include('../../include/displaydialog');%>
-    <%-include('../../include/footer');%>
-</div> <!-- /container -->
+</main> <!-- /container -->
+<%-include('../../include/footer');%>
+<%-include('../../include/displaydialog');%>
 <%-include('./scripts'); %>
 </body>
 </html>
