@@ -10,6 +10,9 @@ const bodyParser = require('body-parser');
 // const cookieParser = require('cookie-parser');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const logger = require('morgan');
+const i18next = require('i18next');
+const i18nextMiddleware = require('i18next-express-middleware');
+const i18nextBackend = require('i18next-node-fs-backend');
 
 const config = require('./config/server.js');
 const mongodbconf = require('./config/mongodb.js');
@@ -26,7 +29,33 @@ global.mqttConnexion = new MQTTEngine();
 global.mqttConnexion.start();
 
 log4n.debug('Create server');
+i18next
+    .use(i18nextBackend)
+    .use(i18nextMiddleware)
+    .use(i18nextMiddleware.LanguageDetector)
+    .init({
+        ns:['common', 'index', 'docs', 'device'],
+        backend: {
+            loadPath: __dirname + '/locales/{{lng}}/{{ns}}.json',
+            addPath: __dirname + '/locales/{{lng}}/{{ns}}.missing.json'
+        },
+        detection: {
+            order: ['path', 'session', 'querystring', 'cookie', 'header'],
+            lookupQuerystring: 'lng',
+            lookupCookie: 'i18next',
+            lookupSession: 'lng',
+            lookupPath: 'lng',
+            lookupFromPathIndex: 0,
+            caches: false,
+            cookieExpirationDate: new Date(),
+            cookieDomain: 'localhost'
+        },
+        fallbackLng: 'en',
+        preload: ['fr', 'en'],
+        saveMissing: true
+    });
 let app = express();
+app.use(i18nextMiddleware.handle(i18next));
 
 log4n.debug('Session store setup');
 let store = new MongoDBStore(

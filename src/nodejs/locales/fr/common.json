@@ -1,0 +1,21 @@
+{
+	"menu":{
+		"docs": "Documentation",
+		"device": "Appareil",
+		"admin": {
+			"title": "Administration",
+			"sub": {
+				"user": "Utilisateur"
+			}
+		},
+		"user": {
+			"title": "username",
+			"sub": {
+				"logout": "Déconnexion"
+			}
+		}
+	},
+	"signin": "Connexion",
+	"signon": "Insciption",
+	"lastconnexion": "Dernière connexion"
+}

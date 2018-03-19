@@ -25,6 +25,8 @@ const page_logout = require('./logout.js');
 const page_recover = require('./recover.js');
 const page_reset = require('./reset.js');
 const page_admin_user = require('./admin_user.js');
+const page_documentation = require('./docs.js');
+const page_device = require('./device.js');
 
 module.exports = function (app) {
     const log4n = new Log4n('/routes/main');
@@ -34,7 +36,9 @@ module.exports = function (app) {
     app.get('/signin', (req, res) => {page_signin(req, res)});
     app.get('/recover', (req, res) => {page_recover(req, res)});
     app.get('/reset/:email/:token', (req, res) => {page_reset(req, res)});
-    app.get('/', checkAuth, (req, res) => {page_index(req, res)});
+    app.get('/', (req, res) => {page_index(req, res)});
+    app.get('/documentation', (req, res) => {page_documentation(req, res)});
+    app.get('/device', checkAuth, (req, res) => {page_device(req, res)});
     app.get('/logout', checkAuth, (req, res) => {page_logout(req, res)});
     app.get('/admin/user', checkAuth, (req, res) => {page_admin_user(req, res)});
 
@@ -53,6 +57,8 @@ module.exports = function (app) {
     app.get('/v1/device/:device_id', checkAuth, (req, res) => {deviceGet(req, res)});
     app.delete('/v1/device/:device_id', checkAuth, (req, res) => {deviceDelete(req, res)});
     app.patch('/v1/device/:device_id', checkAuth, (req, res) => {devicePatch(req, res)});
+
+    log4n.debug('done');
 };
 
 function checkAuth(req, res, next) {

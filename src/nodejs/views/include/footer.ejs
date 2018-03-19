@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-6">
                 <% if(typeof user !== 'undefined') { %>
-                <p class="text-left">Last connection : <%= user.last_connexion_date %></p>
+                <p class="text-left"><%-t('common:lastconnexion')%>&nbsp;<%- user.last_connexion_date %></p>
                 <% } %>
             </div>
             <div class="col-md-6">

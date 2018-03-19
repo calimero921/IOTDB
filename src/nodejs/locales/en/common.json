@@ -1,0 +1,21 @@
+{
+	"menu":{
+		"docs": "Documentation",
+		"device": "Device",
+		"admin": {
+			"title": "Administration",
+			"sub": {
+				"user": "User"
+			}
+		},
+		"user": {
+			"title": "username",
+			"sub": {
+				"logout": "Logout"
+			}
+		}
+	},
+	"signin": "Signin",
+	"signon": "Signon",
+	"lastconnexion": "Last connexion"
+}
