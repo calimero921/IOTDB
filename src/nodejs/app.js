@@ -34,7 +34,8 @@ i18next
     .use(i18nextMiddleware)
     .use(i18nextMiddleware.LanguageDetector)
     .init({
-        ns:['common', 'index', 'docs', 'device'],
+        ns:['common', 'error', 'signin', 'signon', 'recover', 'reset', 'index', 'docs', 'device', 'admin'],
+        defaultNS: 'common',
         backend: {
             loadPath: __dirname + '/locales/{{lng}}/{{ns}}.json',
             addPath: __dirname + '/locales/{{lng}}/{{ns}}.missing.json'
@@ -50,9 +51,11 @@ i18next
             cookieExpirationDate: new Date(),
             cookieDomain: 'localhost'
         },
-        fallbackLng: 'en',
-        preload: ['fr', 'en'],
-        saveMissing: true
+        fallbackLng: 'fr',
+        preload: ['fr'],
+        whitelist: ['fr', 'en'],
+        saveMissing: true,
+        debug: false
     });
 let app = express();
 app.use(i18nextMiddleware.handle(i18next));

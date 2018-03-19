@@ -1,0 +1,24 @@
+{
+	"title": "Inscription",
+	"information": "Créer votre compte",
+	"firstname": {
+		"title": "Prénom",
+		"placeholder": "Votre prénom"
+	},
+	"lastname": {
+		"title": "Nom",
+		"placeholder": "Votre nom de famille"
+	},
+	"email": {
+		"title": "Email",
+		"placeholder": "Votre adresse email"
+	},
+	"password": {
+		"title": "Mot de passe",
+		"placeholder": "Votre mot de passe"
+	},
+	"confirmation": {
+		"title": "Confirmation",
+		"placeholder": "Confirmation de mot de passe"
+	}
+}

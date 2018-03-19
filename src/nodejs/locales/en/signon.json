@@ -1,0 +1,24 @@
+{
+	"title": "Signon",
+	"information": "Create your account",
+	"firstname": {
+		"title": "Firstname",
+		"placeholder": "Enter your firstname"
+	},
+	"lastname": {
+		"title": "Lastname",
+		"placeholder": "User's lastname"
+	},
+	"email": {
+		"title": "Email",
+		"placeholder": "User's email"
+	},
+	"password": {
+		"title": "Password",
+		"placeholder": "Enter your password"
+	},
+	"confirmation": {
+		"title": "Confirmation",
+		"placeholder": "Confirm your password"
+	}
+}
