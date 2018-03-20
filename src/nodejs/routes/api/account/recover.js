@@ -23,16 +23,23 @@ module.exports = function (req, res) {
             }
             receiver = receiver.substr(1);
             log4n.object(receiver, 'receiver');
+            let link = server.url + '/reset/' + user.email + '/' + user.token;
 
             return sendMail(
                 receiver,
-                'Reset your ' + server.name + ' password',
-                'Please click on the above button to change your password in three hours.<br>If it does not work, please paste the link into your web browser\'s address field to complete the registration process..<br>Link: <a href="' + server.url + '/reset/' + user.email + '/' + user.token + '">' + server.url + '/reset/' + user.email + '/' + user.token + '</a>',
-                'Please click on the above button to change your password in three hours.\r\nIf it does not work, please paste the link into your web browser\'s address field to complete the registration process..\r\n' + server.url + '/reset/' + user.email + '/' + user.token
+                req.t('sendmail:message.recover.object').replace('[[servername]]',server.name),
+                req.t('sendmail:message.recover.html').split('[[link]]').join(link),
+                req.t('sendmail:message.recover.text').split('[[link]]').join(link)
             );
         })
         .then(result => {
-            res.send(decodeError(result));
+            log4n.object(result, 'result');
+            let decode = decodeError(result);
+            if (decode === 200) {
+                res.sendStatus(200)
+            } else {
+                res.send(result);
+            }
         })
         .catch(error => {
             log4n.object(error, 'Error');
@@ -43,13 +50,23 @@ module.exports = function (req, res) {
 function decodeError(error) {
     const log4n = new Log4n('/routes/api/users/recover/decodeError');
     log4n.object(error, 'error');
+
     let value = {};
     value.error_code = "500";
     value.error_message = "Internal Server Error";
-
     if (typeof error !== 'undefined') {
-        value.error_code = error.substr(0, 3);
-        value.error_message = error.substr(3);
+        let code = error.substr(0, 3);
+        switch (code) {
+            case '250':
+                value.error_code = 200;
+                value.error_message = "ok";
+                break;
+            default:
+                value.error_code = error.substr(0, 3);
+                value.error_message = error.substr(3);
+                break;
+        }
     }
+    log4n.object(value, 'value');
     return value;
 }

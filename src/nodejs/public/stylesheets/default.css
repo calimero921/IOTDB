@@ -9,6 +9,10 @@ body {
     margin-left: 12px;
     text-align: center;
 }
+#comment {
+    margin-left: 12px;
+    text-align: center;
+}
 
 .info-conformite {
     background: #c7f1ff;

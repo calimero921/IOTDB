@@ -34,7 +34,7 @@ i18next
     .use(i18nextMiddleware)
     .use(i18nextMiddleware.LanguageDetector)
     .init({
-        ns:['common', 'error', 'signin', 'signon', 'recover', 'reset', 'index', 'docs', 'device', 'admin'],
+        ns:['common', 'error', 'identity', 'index', 'docs', 'device', 'admin', 'sendmail'],
         defaultNS: 'common',
         backend: {
             loadPath: __dirname + '/locales/{{lng}}/{{ns}}.json',

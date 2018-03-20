@@ -29,7 +29,7 @@ module.exports = function (req, res) {
                     responseError(error, res, log4n);
                     log4n.debug('done - error');
                 } else {
-                    config.title = 'Reset password';
+                    config.title = req.t('identity:page.reset.title');
                     config.person.token = data.token;
                     log4n.object(config, 'config');
                     res.render('identity/reset/index.html', config);

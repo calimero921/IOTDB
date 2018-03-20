@@ -9,7 +9,10 @@
     <div class="row">
         <div class="col-md-12">
             <div class="row" id="infos">
-                <span><h3 class="info" id="message"><%-title%></h3></span>
+                <span><h3 class="info" id="message"><%-t('identity:page.reset.information')%></h3></span>
+            </div>
+            <div class="row" id="comment">
+                <span><%-t('identity:page.reset.comment')%></span>
             </div>
         </div>
     </div>
@@ -18,19 +21,20 @@
         <div class="col-md-4">&nbsp</div>
         <div class="col-md-4">
             <form role="form" id="userform" name="userform" action="#">
-                <p class="text-center">Hello <%-person.email%> please enter your new password.</p>
                 <input type="hidden" id="token" name="token" value="<%=person.token%>">
                 <div class="form-group">
-                    <label for="pwd1">Password</label>
-                    <input type="password" class="form-control" id="pwd1" placeholder="Enter your password" required>
+                    <label for="pwd1"><%-t('identity:field.password.title')%></label>
+                    <input type="password" class="form-control" id="pwd1"
+                           placeholder="<%-t('identity:field.password.placeholder')%>" required>
                 </div>
                 <div class="form-group">
-                    <label for="pwd2">Confirmation</label>
-                    <input type="password" class="form-control" id="pwd2" placeholder="Confirm your password" required>
+                    <label for="pwd2"><%-t('identity:field.confirmation.title')%></label>
+                    <input type="password" class="form-control" id="pwd2"
+                           placeholder="<%-t('identity:field.confirmation.placeholder')%>" required>
                 </div>
                 <div style="text-align:center;">
                     <button type="submit" class="btn btn-default btn btn-highlight-1 btn-block">
-                        Submit
+                        <%-t('common:submit')%>
                     </button>
                 </div>
             </form>
